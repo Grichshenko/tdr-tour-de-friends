@@ -1,0 +1,992 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day Tours | TDR</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+        @font-face {
+            font-family: 'Morena';
+            src: url('fonts/Morena-ExtraLight.otf') format('opentype');
+            font-weight: 200;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Morena';
+            src: url('fonts/Morena-Light.otf') format('opentype');
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Morena';
+            src: url('fonts/Morena.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #FAFAFA;
+            color: #1A1A1A;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Main Day Tours screen */
+
+        .tour-hero {
+            position: relative;
+            min-height: 100vh;
+            min-height: 100svh;
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.12),
+                    rgba(0, 0, 0, 0.25)
+                ),
+                url('day-tour.png');
+            background-size: cover;
+            background-position: center;
+            color: #FAFAFA;
+        }
+
+
+/* TDR Header */
+
+.tour-header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 24px 16px;
+    gap: 10px;
+}
+
+.tour-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 19px;
+    cursor: pointer;
+}
+
+.tour-menu span {
+    display: block;
+    width: 18px;
+    height: 1.5px;
+    background: #FAFAFA;
+}
+
+.tour-logo {
+    font-family: 'Morena', sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: #FAFAFA;
+    text-decoration: none;
+}
+
+.tour-header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 9px;
+}
+
+.tour-phone {
+    color: #FAFAFA;
+    font-size: 9px;
+    white-space: nowrap;
+}
+
+.tour-call {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #72B995;
+    color: #FAFAFA;
+    text-decoration: none;
+}
+
+.tour-call svg {
+    width: 14px;
+    height: 14px;
+}
+
+
+        .tour-phone {
+            font-size: 11px;
+            white-space: nowrap;
+        }
+
+        .tour-title {
+            position: absolute;
+            top: 45%;
+            left: 0;
+            width: 100%;
+            padding: 0 20px;
+            transform: translateY(-50%);
+            text-align: center;
+            font-family: 'Morena', sans-serif;
+            font-size: 32px;
+            font-weight: 300;
+            line-height: 1.2;
+        }
+
+        .tour-scroll {
+            position: absolute;
+            bottom: 45px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: #B3D2BE;
+            color: #32494B;
+            font-size: 36px;
+            text-decoration: none;
+        }
+
+        /* Bergen tour */
+
+        .tour-stops {
+            padding: 45px 24px 25px;
+            background: #FAFAFA;
+        }
+
+        .bergen-heading {
+            margin: 0 0 24px;
+            font-family: 'Morena', sans-serif;
+            font-size: 32px;
+            font-weight: 300;
+            line-height: 1.12;
+        }
+
+        .tour-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .tour-info span {
+            padding: 7px 10px;
+            border-radius: 6px;
+            background: #E9F1EC;
+            color: #32494B;
+            font-size: 12px;
+        }
+
+        .bergen-description {
+            margin: 0 0 25px;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .bergen-photo {
+            display: block;
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 14px;
+            margin-bottom: 26px;
+        }
+
+        .bergen-subheading,
+        .bergen-route h3 {
+            margin: 0 0 20px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .bergen-highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .bergen-highlights div {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 13px;
+        }
+
+        .bergen-highlights span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: #B3D2BE;
+            color: #32494B;
+        }
+
+        /* Route map */
+
+        .bergen-route {
+            margin-top: 35px;
+        }
+
+        .bergen-route-map {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 14px;
+        }
+
+        /* Photo gallery */
+
+        .bergen-gallery {
+            padding: 15px 20px 25px;
+            background: #FAFAFA;
+        }
+
+        .bergen-gallery-main {
+            display: block;
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 12px;
+        }
+
+        .bergen-gallery-bottom {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .bergen-gallery-bottom img {
+            display: block;
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 14px;
+        }
+
+        /* Participation Fee */
+
+        .participation-fee {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            padding: 25px 20px 50px;
+            background: #FAFAFA;
+        }
+
+        .participation-fee h2 {
+            grid-column: 1 / -1;
+            margin: 0 0 15px;
+            text-align: center;
+            text-transform: uppercase;
+            font-family: 'Morena', sans-serif;
+            font-size: 24px;
+            font-weight: 300;
+        }
+
+        .fee-card {
+            min-width: 0;
+            padding: 16px 12px;
+            border-radius: 15px;
+            background: #D5F1DF;
+        }
+
+        .fee-card h3 {
+            margin: 0 0 8px;
+            font-size: 17px;
+            font-weight: 500;
+        }
+
+        .fee-price {
+            margin: 0 0 8px;
+            font-size: 18px;
+        }
+
+        .fee-card p:not(.fee-price) {
+            min-height: 34px;
+            margin: 0 0 15px;
+            font-size: 11px;
+            line-height: 1.5;
+        }
+
+        .fee-card button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 30px;
+            background: #72B995;
+            color: #FAFAFA;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .fee-card button:hover {
+            background: #5C9E7D;
+        }
+
+        @media (min-width: 700px) {
+            .tour-stops,
+            .bergen-gallery,
+            .participation-fee {
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+/* Coastal Charm Cycling Tour */
+
+.coastal-tour {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 35px 24px 50px;
+    background: #FAFAFA;
+}
+
+.coastal-heading {
+    margin: 0 0 25px;
+    font-family: 'Morena', sans-serif;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1.12;
+}
+
+.coastal-description {
+    margin: 0 0 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.coastal-subheading {
+    margin: 0 0 20px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.coastal-gallery {
+    margin-top: 35px;
+}
+
+.coastal-gallery-main {
+    display: block;
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 12px;
+}
+
+.coastal-gallery-bottom {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.coastal-gallery-bottom img {
+    display: block;
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+/* Coastal Comfort Package */
+
+.coastal-comfort {
+    margin-top: 35px;
+    padding: 25px 20px;
+    background: #E9F1EC;
+    border-radius: 16px;
+}
+
+.coastal-comfort h3 {
+    margin: 0 0 20px;
+    font-family: 'Morena', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.coastal-comfort-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.coastal-comfort-list div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+}
+
+.coastal-comfort-list span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #B3D2BE;
+    color: #32494B;
+    font-weight: 600;
+}
+
+/* Comfort Package — Figma layout */
+
+.coastal-comfort {
+    margin-top: 35px;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+}
+
+.coastal-comfort h3 {
+    margin: 0 0 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.coastal-comfort-list {
+    gap: 8px;
+}
+
+.coastal-comfort-list div {
+    min-height: 43px;
+    padding: 8px;
+    border-radius: 9px;
+    background: #E9F1EC;
+    font-size: 12px;
+}
+
+.coastal-comfort-list span {
+    width: 27px;
+    height: 27px;
+    font-size: 14px;
+}
+
+.coastal-important {
+    margin-top: 28px;
+}
+
+.coastal-important h3 {
+    margin-bottom: 14px;
+}
+
+.coastal-important p {
+    margin: 0;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+/* Contact section */
+
+.tour-contact {
+    padding: 55px 28px;
+    background: #FAFAFA;
+    text-align: center;
+}
+
+.tour-contact p {
+    max-width: 480px;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    line-height: 2;
+}
+
+/* Footer */
+
+.tdr-footer {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    gap: 20px;
+    padding: 48px 30px 55px;
+    background: #32494B;
+    color: #FAFAFA;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+}
+
+.footer-logo {
+    margin-bottom: 2px;
+    font-family: 'Morena', sans-serif;
+    font-size: 34px;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.footer-left a,
+.footer-right a {
+    color: #FAFAFA;
+    text-decoration: none;
+}
+
+.footer-left > a:not(.footer-logo) {
+    font-size: 10px;
+}
+
+.footer-left p {
+    margin: 12px 0 0;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 14px;
+}
+
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #FAFAFA;
+    color: #72B995;
+    text-decoration: none;
+}
+
+.footer-social svg {
+    width: 18px;
+    height: 18px;
+}
+
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.footer-links a {
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+@media (max-width: 350px) {
+    .tdr-footer {
+        padding-left: 20px;
+        padding-right: 20px;
+        gap: 12px;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Main screen -->
+
+    <section class="tour-hero">
+
+        
+
+<header class="tour-header">
+
+    <div class="tour-menu" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <a href="index.html" class="tour-logo">TDR</a>
+
+    <div class="tour-header-right">
+
+        <span class="tour-phone">+47 123 456 78</span>
+
+        <a href="tel:+4712345678" class="tour-call">
+            <svg viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2
+                    c.3-.3.7-.4 1.1-.2 1.1.4 2.3.6 3.5.6
+                    .6 0 1 .4 1 1V20c0 .6-.4 1-1 1
+                    C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5
+                    c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5
+                    .1.4 0 .8-.3 1.1z"/>
+            </svg>
+        </a>
+
+    </div>
+
+</header>
+
+
+
+        <h1 class="tour-title">Day Tours</h1>
+
+        <a href="#tour-stops" class="tour-scroll"
+           aria-label="Scroll to tour information">
+            &#8595;
+        </a>
+
+    </section>
+
+    <!-- Bergen tour information -->
+
+    <section id="tour-stops" class="tour-stops">
+
+        <h2 class="bergen-heading">
+            A One-Day<br>
+            Cycling Tour<br>
+            from Bergen
+        </h2>
+
+        <div class="tour-info">
+            <span>◷ 1 Day</span>
+            <span>▰ Moderate</span>
+            <span>⌖ Bergen</span>
+        </div>
+
+        <p class="bergen-description">
+            Experience the coastal charm of Norway on a
+            scenic one-day cycling tour from Bergen to Flåm.
+            The route combines beautiful fjord landscapes,
+            charming villages and unforgettable views,
+            offering a perfect mix of adventure and relaxation.
+        </p>
+
+        <img
+            src="bergen-tour.png"
+            alt="Scenic view of Bergen"
+            class="bergen-photo"
+        >
+
+        <h3 class="bergen-subheading">Highlights</h3>
+
+        <div class="bergen-highlights">
+            <div>
+                <span>♧</span>
+                Scenic Cycling Routes
+            </div>
+
+            <div>
+                <span>△</span>
+                Spectacular Fjord Views
+            </div>
+
+            <div>
+                <span>❀</span>
+                Nature and Waterfalls
+            </div>
+
+            <div>
+                <span>▣</span>
+                Photo Stops and Viewpoints
+            </div>
+        </div>
+
+        <div class="bergen-route">
+            <h3>Route</h3>
+
+            <img
+                src="bergen-route.png"
+                alt="Map of the Bergen cycling route"
+                class="bergen-route-map"
+            >
+        </div>
+
+    </section>
+
+    <!-- Bergen photo gallery -->
+
+    <div class="bergen-gallery">
+
+        <img
+            src="bergen-gallery-1.png"
+            alt="Norwegian mountain valley"
+            class="bergen-gallery-main"
+        >
+
+        <div class="bergen-gallery-bottom">
+            <img
+                src="bergen-gallery-2.png"
+                alt="Norwegian fjord"
+            >
+
+            <img
+                src="bergen-gallery-3.png"
+                alt="Norwegian mountains"
+            >
+        </div>
+
+    </div>
+
+    <!-- Participation Fee -->
+
+    <section class="participation-fee">
+
+        <h2>Participation Fee</h2>
+
+        <div class="fee-card">
+            <h3>Explore</h3>
+            <p class="fee-price">50 EUR</p>
+            <p>Bike rental not included.</p>
+
+            
+<button
+    type="button"
+    onclick="window.location.href='book-call.html?tour=bergen&package=explore'">
+    Book
+</button>
+
+        </div>
+
+        <div class="fee-card">
+            <h3>Comfort</h3>
+            <p class="fee-price">70 EUR</p>
+            <p>All-inclusive: meals and transfer.</p>
+
+            <button type="button"
+                onclick="window.location.href='book-call.html?tour=bergen&package=comfort'">
+                Book
+            </button>
+        </div>
+
+    </section>
+
+</body>
+
+<!-- Coastal Charm Cycling Tour -->
+
+<section class="coastal-tour">
+
+    <h2 class="coastal-heading">
+        Coastal Charm<br>
+        Cycling Tour
+    </h2>
+
+    <div class="tour-info">
+        <span>◷ 1 Day</span>
+        <span>▰ Moderate</span>
+        <span>⌖ Stavanger</span>
+    </div>
+
+    <p class="coastal-description">
+        Discover the beauty of Norway's coastline on a
+        scenic cycling tour from Stavanger.
+        This route takes you through charming fishing villages,
+        along stunning coastal roads and past impressive fjord
+        landscapes.
+    </p>
+
+    <h3 class="coastal-subheading">Highlights</h3>
+
+    <div class="bergen-highlights">
+        <div><span>♧</span> Scenic Cycling Roads</div>
+        <div><span>△</span> Spectacular Fjord Views</div>
+        <div><span>⌂</span> Charming Villages</div>
+        <div><span>⛴</span> Ferry Experience</div>
+    </div>
+
+<div class="coastal-route">
+    <h3>Route</h3>
+
+    <img
+        src="coastal-route.png"
+        alt="Coastal Charm cycling route map"
+        class="coastal-route-map"
+    >
+</div>
+
+    <div class="coastal-gallery">
+
+        <img
+            src="coastal-gallery-1.png"
+            alt="Norwegian coastal landscape"
+            class="coastal-gallery-main"
+        >
+
+        <div class="coastal-gallery-bottom">
+            <img
+                src="coastal-gallery-2.png"
+                alt="Norwegian fjord"
+            >
+
+            <img
+                src="coastal-gallery-3.png"
+                alt="Norwegian coastal town"
+            >
+        </div>
+
+    </div>
+
+<!-- Comfort Package Includes -->
+
+
+<div class="coastal-comfort">
+
+    <h3>Comfort Package Includes</h3>
+
+    <div class="coastal-comfort-list">
+        <div><span>♧</span> Premium Bicycle</div>
+        <div><span>♙</span> Helmet</div>
+        <div><span>⚑</span> Ferry Tickets</div>
+        <div><span>▢</span> Snacks and Drinking Water</div>
+    </div>
+
+    <div class="coastal-important">
+        <h3>Important Information</h3>
+
+        <p>
+            Distance: approximately 60 km<br>
+            Difficulty: moderate<br>
+            Comfortable clothing and suitable cycling shoes
+            are recommended. Please check the weather
+            conditions before the tour.
+        </p>
+    </div>
+
+</div>
+
+
+
+</section>
+
+<!-- Coastal Charm Participation Fee -->
+
+<section class="participation-fee">
+
+    <h2>Participation Fee</h2>
+
+    <div class="fee-card">
+        <h3>Explore</h3>
+        <p class="fee-price">50 EUR</p>
+        <p>Without bike rental</p>
+
+        <button type="button"
+            onclick="window.location.href='book-call.html?tour=coastal&package=explore'">
+            Book
+        </button>
+    </div>
+
+    <div class="fee-card">
+        <h3>Comfort</h3>
+        <p class="fee-price">150 EUR</p>
+        <p>With Comfort Package</p>
+
+        <button type="button"
+            onclick="window.location.href='book-call.html?tour=coastal&package=comfort'">
+            Book
+        </button>
+    </div>
+
+</section>
+
+<!-- Contact information -->
+
+<section class="tour-contact">
+    <p>
+        If you have any further questions, feel free to reach out
+        to us via email at info@tourdefriends.no<br>
+        or by phone at +47 123 456 78.
+    </p>
+</section>
+
+<!-- Footer -->
+
+<footer class="tdr-footer">
+
+    <div class="footer-left">
+        <a href="index.html" class="footer-logo">TDR</a>
+
+        <a href="tel:+4712345678">+47 123 456 78</a>
+
+        <a href="mailto:info@tourdefriends.no">
+            info@tourdefriends.no
+        </a>
+
+        <p>
+            Contact Tour De Friends to learn<br>
+            more about our community and tours.
+        </p>
+    </div>
+
+    <div class="footer-right">
+
+        
+<div class="footer-social">
+
+    <a href="#" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18"
+                rx="5" fill="none"
+                stroke="currentColor" stroke-width="2"/>
+            <circle cx="12" cy="12" r="4"
+                fill="none"
+                stroke="currentColor" stroke-width="2"/>
+            <circle cx="17.5" cy="6.5" r="1.2"
+                fill="currentColor"/>
+        </svg>
+    </a>
+
+    <a href="#" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+                fill="currentColor"
+                d="M13.5 21v-8h2.7l.4-3.1h-3.1V8
+                c0-.9.3-1.5 1.6-1.5h1.7V3.7
+                c-.3 0-1.3-.1-2.5-.1
+                -2.5 0-4.2 1.5-4.2 4.3v2H7.3V13
+                h2.8v8z"/>
+        </svg>
+    </a>
+
+</div>
+
+    <nav class="footer-links">
+        <a href="#">Extended<br>Tours</a>
+        <a href="#">Weekend<br>Getaways</a>
+        <a href="#">Our Equipment</a>
+    </nav>
+
+</div>
+
+
+</footer>
+
+</body>
+</html>
+
+

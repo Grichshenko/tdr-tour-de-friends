@@ -1,0 +1,1465 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekend Getaways | TDR</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+@font-face {
+    font-family: 'Morena';
+    src: url('fonts/Morena-ExtraLight.otf') format('opentype');
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: 'Morena';
+    src: url('fonts/Morena-Light.otf') format('opentype');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Morena';
+    src: url('fonts/Morena.otf') format('opentype');
+    font-weight: 400;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #FAFAFA;
+    color: #1A1A1A;
+    font-family: 'Montserrat', sans-serif;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* HERO */
+
+.weekend-hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, .12),
+            rgba(0, 0, 0, .28)
+        ),
+        url("weekend-hero.png") center / cover no-repeat;
+    color: white;
+}
+
+/* HEADER — ONE CONSISTENT VERSION */
+
+/* WEEKEND HEADER — FINAL */
+
+
+.weekend-header {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 24px 16px;
+    gap: 10px;
+}
+
+.weekend-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 19px;
+    cursor: pointer;
+}
+
+.weekend-menu span {
+    display: block;
+    width: 18px;
+    height: 1.5px;
+    background: #FAFAFA;
+}
+
+.weekend-header .logo {
+    position: static;
+    transform: none;
+    margin: 0;
+    font-family: 'Morena', sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: #FAFAFA;
+    text-decoration: none;
+}
+
+.weekend-header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 9px;
+}
+
+.weekend-phone-number {
+    color: #FAFAFA;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+.weekend-call {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #72B995;
+    color: #FAFAFA;
+    text-decoration: none;
+}
+
+.weekend-call svg {
+    width: 14px;
+    height: 14px;
+}
+
+.weekend-title {
+    position: absolute;
+    top: 48%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    padding: 0 20px;
+    text-align: center;
+    font-family: 'Morena', sans-serif;
+    font-size: 38px;
+    font-weight: 300;
+    line-height: 1.1;
+}
+
+.scroll-circle {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #B3D2BE;
+    color: #32494B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+/* TOUR CONTENT */
+
+.tour-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 45px 20px 25px;
+}
+
+.tour-heading {
+    font-family: 'Morena', sans-serif;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1.1;
+    text-align: center;
+    margin: 0 0 25px;
+}
+
+.tour-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 7px;
+    margin-bottom: 25px;
+}
+
+.tour-tags span {
+    padding: 8px 10px;
+    border-radius: 6px;
+    background: #E9F1EC;
+    color: #32494B;
+    font-size: 10px;
+}
+
+.tour-description {
+    font-size: 12px;
+    line-height: 1.9;
+    margin-bottom: 30px;
+}
+
+.subheading {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 30px 0 20px;
+}
+
+/* HIGHLIGHTS */
+
+.highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.highlight {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+}
+
+.highlight-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #B3D2BE;
+    color: #32494B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 17px;
+}
+
+/* ITINERARY */
+
+.itinerary {
+    margin-top: 45px;
+}
+
+.day {
+    display: grid;
+    grid-template-columns: 105px minmax(0, 1fr);
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.day img {
+    width: 105px;
+    height: 105px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.day-label {
+    color: #69AD80;
+    font-size: 11px;
+    font-weight: 600;
+    margin: 0 0 7px;
+}
+
+.day h4 {
+    font-size: 12px;
+    margin: 0 0 7px;
+    font-weight: 600;
+}
+
+.day p {
+    font-size: 10px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* COMFORT PACKAGE */
+
+.comfort-list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.comfort-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 12px;
+    background: #E9F1EC;
+    border-radius: 9px;
+    font-size: 12px;
+}
+
+.comfort-icon {
+    width: 29px;
+    height: 29px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #B3D2BE;
+    font-size: 15px;
+}
+
+/* IMPORTANT INFORMATION */
+
+.important-info {
+    font-size: 11px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* GALLERY */
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 20px 20px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.gallery-main {
+    height: 190px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.gallery-small {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.gallery-small img {
+    height: 125px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* PARTICIPATION FEE */
+
+.participation {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 25px 20px 65px;
+}
+
+.participation h2 {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Morena', sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    margin: 0 0 25px;
+}
+
+.fee-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.fee-card {
+    min-width: 0;
+    background: #D5F1DF;
+    border-radius: 15px;
+    padding: 16px 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+.fee-card h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 0 10px;
+}
+
+.fee-price {
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+
+.fee-description {
+    font-size: 10px;
+    line-height: 1.6;
+    margin: 0 0 20px;
+    flex: 1;
+}
+
+.book-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 30px;
+    background: #69AD80;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* FOOTER */
+
+.footer {
+    padding: 35px 25px;
+    background: #32494B;
+    color: white;
+}
+
+.footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.footer-logo {
+    font-family: 'Morena', sans-serif;
+    font-size: 36px;
+    color: white;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social a {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: white;
+    color: #69AD80;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.footer-contact,
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.footer-contact a,
+.footer-links a {
+    color: white;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.footer-contact p {
+    font-size: 10px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+@media (max-width: 350px) {
+    .tour-heading {
+        font-size: 28px;
+    }
+
+    .day {
+        grid-template-columns: 90px minmax(0, 1fr);
+    }
+
+    .day img {
+        width: 90px;
+        height: 90px;
+    }
+}
+
+/* WEEKEND CONTACT */
+
+.weekend-contact {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 25px 65px;
+    text-align: center;
+}
+
+.weekend-contact p {
+    font-size: 11px;
+    line-height: 2;
+    color: #32494B;
+}
+
+.weekend-contact a {
+    color: #32494B;
+    text-decoration: none;
+}
+
+/* CONTACT TEXT FIX */
+
+.weekend-contact {
+    padding: 35px 20px 65px;
+    text-align: center;
+}
+
+.weekend-contact p {
+    max-width: 350px;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    line-height: 1.9;
+    color: #32494B;
+}
+
+.weekend-contact a {
+    color: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* HEADER POSITION CORRECTION */
+
+.weekend-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 15px;
+    min-height: 65px;
+}
+
+.weekend-menu {
+    display: block;
+    flex: 0 0 auto;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.weekend-header .logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-family: 'Morena', sans-serif;
+    font-size: 21px;
+    font-weight: 300;
+    color: white;
+}
+
+.weekend-header-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.weekend-phone-number {
+    font-size: 9px;
+    white-space: nowrap;
+    color: white;
+}
+
+.weekend-call {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #69AD80;
+    color: white;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+/* HEADER SAME AS DAY TOURS */
+
+.weekend-header {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 65px;
+    padding: 15px 15px;
+}
+
+.weekend-menu {
+    flex: 0 0 auto;
+    border: none;
+    padding: 0;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.weekend-header .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-family: 'Morena', sans-serif;
+    font-size: 21px;
+    font-weight: 300;
+    color: white;
+}
+
+.weekend-header-right {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-left: auto;
+}
+
+.weekend-phone-number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    color: white;
+    white-space: nowrap;
+}
+
+.weekend-call {
+    width: 29px;
+    height: 29px;
+    border-radius: 50%;
+    background: #69AD80;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+/* HEADER TYPOGRAPHY */
+
+.weekend-header .logo {
+    font-family: 'Morena', sans-serif;
+    font-size: 21px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 1;
+}
+
+.weekend-phone-number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 1;
+}
+
+.weekend-call svg {
+    display: block;
+    width: 15px;
+    height: 15px;
+}
+
+/* FIX HAMBURGER ICON */
+
+.weekend-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+    width: 19px;
+    height: 18px;
+}
+
+.weekend-menu span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    min-height: 2px;
+    flex-shrink: 0;
+    background-color: #FAFAFA;
+    border-radius: 0;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<section class="weekend-hero">
+
+    
+
+
+<header class="weekend-header">
+
+    <div class="weekend-menu" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <a href="index.html" class="logo">TDR</a>
+
+    <div class="weekend-header-right">
+
+        <span class="weekend-phone-number">
+            +47 123 456 78
+        </span>
+
+        <a href="tel:+4712345678"
+           class="weekend-call"
+           aria-label="Call Tour De Friends">
+
+            <svg viewBox="0 0 24 24">
+                <path fill="currentColor"
+                    d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2
+                    c.3-.3.7-.4 1.1-.2 1.1.4 2.3.6 3.5.6
+                    .6 0 1 .4 1 1V20c0 .6-.4 1-1 1
+                    C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5
+                    c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5
+                    .1.4 0 .8-.3 1.1z"/>
+            </svg>
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+
+    <h1 class="weekend-title">
+        Weekend<br>Getaways
+    </h1>
+
+    <a href="#fjord-tour" class="scroll-circle"
+       aria-label="Scroll to tour">↓</a>
+
+</section>
+
+<!-- FIRST TOUR -->
+
+<section class="tour-content" id="fjord-tour">
+
+    <h2 class="tour-heading">
+        Fjord Exploration<br>
+        Cycling<br>
+        Adventure
+    </h2>
+
+    <div class="tour-tags">
+        <span>◷ 3 Days</span>
+        <span>▥ Challenging</span>
+        <span>⌖ Oslo</span>
+    </div>
+
+    <p class="tour-description">
+        Cycle through the breathtaking landscapes of Norway
+        on a three-day adventure around Oslo and Trolltunga.
+        Discover scenic fjord routes, waterfalls, mountain
+        viewpoints and charming Norwegian villages.
+        The tour combines active cycling with opportunities
+        to explore nature and experience local culture.
+    </p>
+
+    <h3 class="subheading">Highlights</h3>
+
+    <div class="highlights">
+        <div class="highlight">
+            <span class="highlight-icon">♧</span>
+            Scenic Fjord Routes
+        </div>
+
+        <div class="highlight">
+            <span class="highlight-icon">△</span>
+            Iconic Trolltunga Viewpoint
+        </div>
+
+        <div class="highlight">
+            <span class="highlight-icon">⌂</span>
+            Norwegian Villages
+        </div>
+
+        <div class="highlight">
+            <span class="highlight-icon">♧</span>
+            Waterfalls and Mountain Landscapes
+        </div>
+    </div>
+
+    <!-- 3-DAY ITINERARY -->
+
+    <div class="itinerary">
+        <h3 class="subheading">3-Day Itinerary</h3>
+
+        <div class="day">
+            <img src="weekend-day1.png"
+                 alt="Norwegian coastal scenery">
+
+            <div>
+                <p class="day-label">Day 1</p>
+                <h4>Coastal Discovery</h4>
+                <p>
+                    Cycle along scenic coastal roads,
+                    discover fishing villages and enjoy
+                    beautiful views of the surrounding islands.
+                </p>
+            </div>
+        </div>
+
+        <div class="day">
+            <img src="weekend-day2.png"
+                 alt="Norwegian mountains">
+
+            <div>
+                <p class="day-label">Day 2</p>
+                <h4>Fjords and Mountains</h4>
+                <p>
+                    Cycle through scenic valleys,
+                    mountains and waterfalls.
+                    Enjoy photo stops before returning
+                    to your accommodation.
+                </p>
+            </div>
+        </div>
+
+        <div class="day">
+            <img src="weekend-day3.png"
+                 alt="Trolltunga landscape">
+
+            <div>
+                <p class="day-label">Day 3</p>
+                <h4>Trolltunga and Return</h4>
+                <p>
+                    Explore the Trolltunga area,
+                    enjoy mountain views and take
+                    photos before returning to Oslo.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- COMFORT PACKAGE -->
+
+    <h3 class="subheading">Comfort Package Includes</h3>
+
+    <div class="comfort-list">
+        <div class="comfort-item">
+            <span class="comfort-icon">⌂</span>
+            Accommodation in local hotels
+        </div>
+
+        <div class="comfort-item">
+            <span class="comfort-icon">♜</span>
+            Breakfasts and dinners
+        </div>
+
+        <div class="comfort-item">
+            <span class="comfort-icon">♧</span>
+            Ferry Tickets
+        </div>
+
+        <div class="comfort-item">
+            <span class="comfort-icon">♧</span>
+            Snacks and Drinking Water
+        </div>
+
+        <div class="comfort-item">
+            <span class="comfort-icon">♧</span>
+            Support vehicle
+        </div>
+    </div>
+
+    <!-- IMPORTANT INFORMATION -->
+
+ 
+<!-- IMPORTANT INFORMATION -->
+
+<h3 class="subheading important-heading">
+    Important Information
+</h3>
+
+<p class="important-info">
+    Duration: 3 days<br>
+    Difficulty: Challenging<br>
+    Starting point: Odda<br>
+ Comfortable cycling clothing and suitable shoes are recommended. Please check the weather conditions and prepare for mountain terrain.
+</p>
+
+
+</section>
+
+<!-- GALLERY -->
+
+<div class="gallery">
+
+    <img src="weekend-gallery-1.png"
+         alt="Norwegian mountain landscape"
+         class="gallery-main">
+
+    <div class="gallery-small">
+        <img src="weekend-gallery-2.png"
+             alt="Norwegian fjord">
+
+        <img src="weekend-gallery-3.png"
+             alt="Mountain river">
+    </div>
+
+</div>
+
+<!-- PARTICIPATION FEE -->
+
+<section class="participation">
+
+    <h2>Participation Fee</h2>
+
+    <div class="fee-grid">
+
+        <div class="fee-card">
+            <h3>Explore</h3>
+            <p class="fee-price">450 EUR</p>
+            <p class="fee-description">
+                Basic package
+            </p>
+
+            <a href="book-call.html" class="book-button">
+                Book
+            </a>
+        </div>
+
+        <div class="fee-card">
+            <h3>Comfort</h3>
+            <p class="fee-price">650 EUR</p>
+            <p class="fee-description">
+                All-inclusive: hotel, meals & transfer
+            </p>
+
+            <a href="book-call.html" class="book-button">
+                Book
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SECOND TOUR: CYCLING THROUGH HISTORY AND HERITAGE -->
+
+<section class="tour-content" id="history-tour">
+
+    <h2 class="tour-heading">
+        Cycling<br>
+        Through History<br>
+        and<br>
+        Heritage
+    </h2>
+
+    <div class="tour-tags">
+        <span>◷ 3 Days</span>
+        <span>▥ Moderate</span>
+        <span>▤ Cultural Tour</span>
+    </div>
+
+    <p class="tour-description">
+        Discover Norway's rich history and cultural heritage
+        on a scenic cycling journey. Explore charming villages,
+        historic landmarks and beautiful landscapes while
+        experiencing local traditions and Norwegian culture.
+    </p>
+
+    <h3 class="subheading">Highlights</h3>
+
+    <div class="highlights">
+
+        <div class="highlight">
+            <span class="highlight-icon">♧</span>
+            Scenic Cycling Routes
+        </div>
+
+        <div class="highlight">
+            <span class="highlight-icon">▤</span>
+            Historic Landmarks
+        </div>
+
+        <div class="highlight">
+            <span class="highlight-icon">⌂</span>
+            Traditional Norwegian Villages
+        </div>
+
+        <div class="highlight">
+            <span class="highlight-icon">▣</span>
+            Cultural and Photo Stops
+        </div>
+
+    </div>
+
+    <!-- 3-DAY ITINERARY -->
+
+    <div class="itinerary">
+
+        <h3 class="subheading">3-Day Itinerary</h3>
+
+        <div class="day">
+
+            <img src="history-day1.png"
+                 alt="Traditional Norwegian village">
+
+            <div>
+                <p class="day-label">Day 1</p>
+
+                <h4>Discovering Local Heritage</h4>
+
+                <p>
+                    Cycle through traditional Norwegian villages
+                    and discover historic streets, architecture
+                    and local culture.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="day">
+
+            <img src="history-day2.png"
+                 alt="Norwegian village by the water">
+
+            <div>
+                <p class="day-label">Day 2</p>
+
+                <h4>Nature and Historic Villages</h4>
+
+                <p>
+                    Enjoy scenic cycling routes, charming
+                    villages and stops at historic landmarks
+                    along the way.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="day">
+
+            <img src="history-day3.png"
+                 alt="Historic Norwegian waterfront">
+
+            <div>
+                <p class="day-label">Day 3</p>
+
+                <h4>Cultural Highlights and Return</h4>
+
+                <p>
+                    Explore local attractions and enjoy
+                    the final cycling stage before returning
+                    to the starting point.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- COMFORT PACKAGE -->
+
+    <h3 class="subheading">Comfort Package Includes</h3>
+
+    <div class="comfort-list">
+
+        <div class="comfort-item">
+            <span class="comfort-icon">⌂</span>
+            Accommodation in local hotels
+        </div>
+
+        <div class="comfort-item">
+            <span class="comfort-icon">♜</span>
+            Breakfasts and dinners
+        </div>
+
+        <div class="comfort-item">
+            <span class="comfort-icon">▤</span>
+            Guided Cultural Tours
+        </div>
+
+        <div class="comfort-item">
+            <span class="comfort-icon">♧</span>
+            Snacks and Drinking Water
+        </div>
+
+        <div class="comfort-item">
+            <span class="comfort-icon">▣</span>
+            Support Vehicle
+        </div>
+
+    </div>
+
+    <!-- IMPORTANT INFORMATION -->
+
+    <h3 class="subheading">Important Information</h3>
+
+    <p class="important-info">
+        Duration: 3 days<br>
+        Difficulty: Moderate<br>
+        Starting point: Bergen<br><br>
+
+      Comfortable cycling clothing, suitable shoes and
+a waterproof jacket are recommended. Please check the weather conditions and prepare 
+for coastal winds.
+    </p>
+
+</section>
+
+
+<!-- SECOND TOUR GALLERY -->
+
+<div class="gallery">
+
+    <img src="history-gallery-1.png"
+         alt="Colorful houses in Bergen"
+         class="gallery-main">
+
+    <div class="gallery-small">
+
+        <img src="history-gallery-2.png"
+             alt="Yellow Norwegian houses">
+
+        <img src="history-gallery-3.png"
+             alt="Traditional Norwegian wooden church">
+
+    </div>
+
+</div>
+
+
+<!-- SECOND TOUR PARTICIPATION FEE -->
+
+<section class="participation">
+
+    <h2>Participation Fee</h2>
+
+    <div class="fee-grid">
+
+        <div class="fee-card">
+            <h3>Explore</h3>
+            <p class="fee-price">350 EUR</p>
+            <p class="fee-description">Basic package</p>
+
+            <a href="book-call.html" class="book-button">
+                Book
+            </a>
+        </div>
+
+        <div class="fee-card">
+            <h3>Comfort</h3>
+            <p class="fee-price">550 EUR</p>
+            <p class="fee-description">
+                All-inclusive: hotel, meals &amp; transfer.
+            </p>
+
+            <a href="book-call.html" class="book-button">
+                Book
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- THIRD TOUR: NORWEGIAN ARCHIPELAGO -->
+
+<section class="tour-content" id="archipelago-tour">
+
+    <h2 class="tour-heading">
+        Cycling<br>
+        Adventure<br>
+        in the<br>
+        Norwegian<br>
+        Archipelago
+    </h2>
+
+    <div class="tour-tags">
+        <span>◷ 3 Days</span>
+        <span>▥ Moderate</span>
+        <span>⌖ Archipelago</span>
+    </div>
+
+    <p class="tour-description">
+        Explore the beauty of Norway's archipelago
+        on a scenic cycling adventure. Discover charming
+        fishing villages, peaceful islands and breathtaking
+        coastal landscapes while enjoying fresh sea air
+        and unforgettable views.
+    </p>
+
+    <h3 class="subheading">Highlights</h3>
+
+    <div class="highlights">
+
+        <div class="highlight">
+            <span class="highlight-icon">≋</span>
+            Scenic Island Routes
+        </div>
+
+        <div class="highlight">
+            <span class="highlight-icon">♧</span>
+            Island-Hopping Adventures
+        </div>
+
+        <div class="highlight">
+            <span class="highlight-icon">⌂</span>
+            Charming Fishing Villages
+        </div>
+
+        <div class="highlight">
+            <span class="highlight-icon">▣</span>
+            Coastal Views and Photo Stops
+        </div>
+
+    </div>
+
+    <!-- 3-DAY ITINERARY -->
+
+    <div class="itinerary">
+
+        <h3 class="subheading">3-Day Itinerary</h3>
+
+        <div class="day">
+            <img src="archipelago-day1.png"
+                 alt="Norwegian fishing village">
+
+            <div>
+                <p class="day-label">Day 1</p>
+                <h4>Coastal Discovery</h4>
+                <p>
+                    Arrive and cycle along scenic
+                    coastal roads. Discover traditional
+                    fishing villages and enjoy
+                    beautiful sea views.
+                </p>
+            </div>
+        </div>
+
+        <div class="day">
+            <img src="archipelago-day2.png"
+                 alt="Norwegian islands">
+
+            <div>
+                <p class="day-label">Day 2</p>
+                <h4>Island-Hopping Adventure</h4>
+                <p>
+                    Explore beautiful islands,
+                    enjoy coastal cycling routes
+                    and discover peaceful villages
+                    along the way.
+                </p>
+            </div>
+        </div>
+
+        <div class="day">
+            <img src="archipelago-day3.png"
+                 alt="Norwegian coastal mountains">
+
+            <div>
+                <p class="day-label">Day 3</p>
+                <h4>Coastal Highlights and Return</h4>
+                <p>
+                    Enjoy the final cycling route,
+                    stop at scenic viewpoints and
+                    take photos before returning
+                    to the starting point.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- COMFORT PACKAGE -->
+
+    <h3 class="subheading">Comfort Package Includes</h3>
+
+    <div class="comfort-list">
+
+        <div class="comfort-item">
+            <span class="comfort-icon">⌂</span>
+            Accommodation in local hotels
+        </div>
+
+        <div class="comfort-item">
+            <span class="comfort-icon">♜</span>
+            Breakfasts and dinners
+        </div>
+
+        <div class="comfort-item">
+            <span class="comfort-icon">▤</span>
+            Guided Cultural Tours
+        </div>
+
+        <div class="comfort-item">
+            <span class="comfort-icon">♧</span>
+            Snacks and Drinking Water
+        </div>
+
+        <div class="comfort-item">
+            <span class="comfort-icon">▣</span>
+            Support Vehicle
+        </div>
+
+    </div>
+
+    <!-- IMPORTANT INFORMATION -->
+
+    <h3 class="subheading">Important Information</h3>
+
+    <p class="important-info">
+        Duration: 3 days<br>
+        Difficulty: Moderate<br>
+        Starting point: Svolvær, Lofoten Islands<br><br>
+
+        Comfortable cycling clothing, suitable shoes
+        and a waterproof jacket are recommended.
+        Please check the weather conditions
+        and prepare for coastal winds.
+    </p>
+
+</section>
+
+
+<!-- THIRD TOUR GALLERY -->
+
+<div class="gallery">
+
+    <img src="archipelago-gallery-1.png"
+         alt="Norwegian coastal mountains"
+         class="gallery-main">
+
+    <div class="gallery-small">
+
+        <img src="archipelago-gallery-2.png"
+             alt="Traditional red fishing houses">
+
+        <img src="archipelago-gallery-3.png"
+             alt="Cyclist in the Norwegian countryside">
+
+    </div>
+
+</div>
+
+
+<!-- THIRD TOUR PARTICIPATION FEE -->
+
+<section class="participation">
+
+    <h2>Participation Fee</h2>
+
+    <div class="fee-grid">
+
+        <div class="fee-card">
+
+            <h3>Explore</h3>
+            <p class="fee-price">390 EUR</p>
+
+            <p class="fee-description">
+                Basic package
+            </p>
+
+            <a href="book-call.html" class="book-button">
+                Book
+            </a>
+
+        </div>
+
+        <div class="fee-card">
+
+            <h3>Comfort</h3>
+            <p class="fee-price">590 EUR</p>
+
+            <p class="fee-description">
+                All-inclusive - hotel,
+                meals &amp; transfer.
+            </p>
+
+            <a href="book-call.html" class="book-button">
+                Book
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- CONTACT INFORMATION -->
+
+<div class="weekend-contact">
+    <p>
+        If you have any further questions, feel free to reach out<br>
+        to us via email at
+        <a href="mailto:info@tourdefriends.no">info@tourdefriends.no</a><br>
+        or by phone at
+        <a href="tel:+4712345678">+47 123 456 78</a>.
+    </p>
+</div>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-top">
+        <a href="index.html" class="footer-logo">TDR</a>
+
+        <div class="footer-social">
+            <a href="#" aria-label="Instagram">◎</a>
+            <a href="#" aria-label="Facebook">f</a>
+        </div>
+    </div>
+
+    <div class="footer-content">
+
+        <div class="footer-contact">
+            <a href="tel:+4712345678">+47 123 456 78</a>
+            <a href="mailto:info@tourdefriends.no">
+                info@tourdefriends.no
+            </a>
+
+            <p>
+                Contact Tour De Friends to learn
+                more about our community and tours.
+            </p>
+        </div>
+
+        <nav class="footer-links">
+            <a href="day-tours.html">Day Tours</a>
+            <a href="extended-tours.html">Extended Tours</a>
+            <a href="index.html#equipment">Our Equipment</a>
+            
+        </nav>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

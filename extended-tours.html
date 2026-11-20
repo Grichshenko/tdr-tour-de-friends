@@ -1,0 +1,1229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Extended Tours | TDR</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+@font-face {
+    font-family: 'Morena';
+    src: url('fonts/Morena-Light.otf') format('opentype');
+    font-weight: 300;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #FAFAFA;
+    color: #1A1A1A;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* HERO */
+
+.extended-hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    background:
+        linear-gradient(
+            rgba(0,0,0,.12),
+            rgba(0,0,0,.25)
+        ),
+        url('extended-hero.png') center/cover no-repeat;
+    color: #FAFAFA;
+}
+
+/* HEADER */
+
+.extended-header {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 24px 16px;
+    gap: 10px;
+}
+
+.extended-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4px;
+    width: 19px;
+    height: 18px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.extended-menu span {
+    display: block;
+    width: 18px;
+    height: 2px;
+    min-height: 2px;
+    flex-shrink: 0;
+    background: #FAFAFA;
+}
+
+.extended-logo {
+    font-family: 'Morena', sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: #FAFAFA;
+}
+
+.extended-header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 9px;
+}
+
+.extended-phone {
+    font-size: 11px;
+    white-space: nowrap;
+    color: #FAFAFA;
+}
+
+.extended-call {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #72B995;
+    color: #FAFAFA;
+}
+
+.extended-call svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* HERO TITLE */
+
+.extended-title {
+    position: absolute;
+    top: 55%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    padding: 0 20px;
+    text-align: center;
+    font-family: 'Morena', sans-serif;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1.15;
+}
+
+/* TOUR CONTENT */
+
+.extended-tour {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 45px 20px 30px;
+}
+
+.extended-tour h2 {
+    margin: 0 0 25px;
+    font-family: 'Morena', sans-serif;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1.12;
+    text-align: center;
+}
+
+.tour-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.tour-tags span {
+    padding: 8px 10px;
+    border-radius: 6px;
+    background: #E9F1EC;
+    color: #32494B;
+    font-size: 10px;
+}
+
+.tour-description {
+    margin: 0 0 30px;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.subheading {
+    margin: 30px 0 20px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* HIGHLIGHTS */
+
+.highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.highlight {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+}
+
+.highlight-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #B3D2BE;
+    color: #32494B;
+    font-size: 17px;
+}
+
+/* DAILY ITINERARY */
+
+.daily-itinerary {
+    margin-top: 20px;
+}
+
+.itinerary-day {
+    display: grid;
+    grid-template-columns: 105px minmax(0,1fr);
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.itinerary-day img {
+    display: block;
+    width: 105px;
+    height: 115px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.day-number {
+    margin: 0 0 10px;
+    color: #69AD80;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.itinerary-day h4 {
+    margin: 0 0 7px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.itinerary-day p:not(.day-number) {
+    margin: 0;
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+/* COMFORT PACKAGE */
+
+.comfort-list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 35px;
+}
+
+.comfort-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 43px;
+    padding: 8px 12px;
+    background: #E9F1EC;
+    border-radius: 9px;
+    font-size: 12px;
+}
+
+.comfort-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 29px;
+    height: 29px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: #B3D2BE;
+    color: #32494B;
+    font-size: 15px;
+}
+
+.important-info {
+    margin: 0 0 30px;
+    font-size: 11px;
+    line-height: 1.9;
+}
+
+/* GALLERY */
+
+.extended-gallery {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 20px 30px;
+}
+
+.extended-gallery-main {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 12px;
+}
+
+.extended-gallery-bottom {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 12px;
+}
+
+.extended-gallery-bottom img {
+    display: block;
+    width: 100%;
+    height: 125px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* PARTICIPATION FEE */
+
+.extended-fee {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 15px 20px 65px;
+}
+
+.extended-fee h2 {
+    margin: 0 0 25px;
+    text-align: center;
+    font-family: 'Morena', sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.extended-fee-grid {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 12px;
+}
+
+.extended-fee-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 16px 12px;
+    border-radius: 15px;
+    background: #D5F1DF;
+}
+
+.extended-fee-card h3 {
+    margin: 0 0 10px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.extended-fee-price {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+
+.extended-fee-description {
+    flex: 1;
+    margin: 0 0 20px;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.extended-book {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 30px;
+    background: #69AD80;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* CONTACT INFORMATION */
+
+.extended-contact {
+    padding: 55px 18px 45px;
+    background: #FAFAFA;
+    text-align: center;
+}
+
+.extended-contact p {
+    max-width: 480px;
+    margin: 0 auto;
+    font-size: 11px;
+    line-height: 1.9;
+}
+
+.extended-contact a {
+    color: inherit;
+    white-space: nowrap;
+}
+
+/* FOOTER */
+
+.extended-footer {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    gap: 20px;
+    padding: 38px 16px 55px;
+    background: #32494B;
+    color: #FAFAFA;
+}
+
+.extended-footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+}
+
+.extended-footer-logo {
+    margin-bottom: 2px;
+    font-family: 'Morena', sans-serif;
+    font-size: 34px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: #FAFAFA;
+}
+
+.extended-footer-left > a:not(.extended-footer-logo) {
+    color: #FAFAFA;
+    font-size: 10px;
+}
+
+.extended-footer-left p {
+    margin: 12px 0 0;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.extended-footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 35px;
+}
+
+.extended-footer-social {
+    display: flex;
+    gap: 14px;
+}
+
+.extended-footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #FAFAFA;
+    color: #72B995;
+}
+
+.extended-footer-social svg {
+    width: 18px;
+    height: 18px;
+}
+
+.extended-footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.extended-footer-links a {
+    color: #FAFAFA;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+@media (max-width: 350px) {
+    .extended-footer {
+        grid-template-columns: 1.5fr 1fr;
+        gap: 12px;
+    }
+
+    .extended-phone {
+        font-size: 9px;
+    }
+
+    .extended-header {
+        gap: 5px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<section class="extended-hero">
+
+    <header class="extended-header">
+
+        <button class="extended-menu"
+                type="button"
+                aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <a href="index.html" class="extended-logo">
+            TDR
+        </a>
+
+        <div class="extended-header-right">
+
+            <span class="extended-phone">
+                +47 123 456 78
+            </span>
+
+            <a href="tel:+4712345678"
+               class="extended-call"
+               aria-label="Call Tour De Friends">
+
+                <svg viewBox="0 0 24 24"
+                     aria-hidden="true">
+                    <path fill="currentColor"
+                          d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2
+                          c.3-.3.7-.4 1.1-.2 1.1.4 2.3.6 3.5.6
+                          .6 0 1 .4 1 1V20c0 .6-.4 1-1 1
+                          C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5
+                          c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5
+                          .1.4 0 .8-.3 1.1z"/>
+                </svg>
+
+            </a>
+
+        </div>
+
+    </header>
+
+    <h1 class="extended-title">
+        Extended<br>Tours
+    </h1>
+
+</section>
+
+
+<!-- FIRST TOUR -->
+
+<section class="extended-tour" id="grand-nordic">
+
+    <h2>
+        Grand Nordic<br>
+        Cycling<br>
+        Expedition
+    </h2>
+
+    <div class="tour-tags">
+        <span>◷ 7 Days</span>
+        <span>▥ Challenging</span>
+        <span>⌖ Bergen</span>
+    </div>
+
+    <p class="tour-description">
+        Discover Norway on an unforgettable 7-day cycling
+        adventure from Bergen to Trondheim. Ride through
+        scenic fjords, charming villages and mountain
+        landscapes while exploring some of the country's
+        most beautiful destinations.
+    </p>
+
+    <h3 class="subheading">Highlights</h3>
+
+    <div class="highlights">
+
+        <div class="highlight">
+            <span class="highlight-icon">♧</span>
+            Scenic Cycling Routes
+        </div>
+
+        <div class="highlight">
+            <span class="highlight-icon">△</span>
+            Fjords and Mountain Landscapes
+        </div>
+
+        <div class="highlight">
+            <span class="highlight-icon">⌂</span>
+            Charming Norwegian Towns
+        </div>
+
+        <div class="highlight">
+            <span class="highlight-icon">▣</span>
+            Historic and Cultural Stops
+        </div>
+
+    </div>
+
+    <h3 class="subheading">Daily Itinerary — 7 Days</h3>
+
+    <div class="daily-itinerary">
+
+        <div class="itinerary-day">
+            <img src="extended-day1.png" alt="Bergen">
+            <div>
+                <p class="day-number">Day 1</p>
+                <h4>Bergen to Flåm</h4>
+                <p>
+                    Cycle through scenic landscapes and enjoy
+                    beautiful fjord views on your way to Flåm.
+                </p>
+            </div>
+        </div>
+
+        <div class="itinerary-day">
+            <img src="extended-day2.png" alt="Mountains">
+            <div>
+                <p class="day-number">Day 2</p>
+                <h4>Flåm to Geilo</h4>
+                <p>
+                    Discover mountain landscapes, peaceful
+                    valleys and charming villages along
+                    the route to Geilo.
+                </p>
+            </div>
+        </div>
+
+        <div class="itinerary-day">
+            <img src="extended-day3.png" alt="Fjord">
+            <div>
+                <p class="day-number">Day 3</p>
+                <h4>Geilo to Lillehammer</h4>
+                <p>
+                    Cycle through beautiful valleys and
+                    mountain scenery before arriving
+                    in Lillehammer.
+                </p>
+            </div>
+        </div>
+
+        <div class="itinerary-day">
+            <img src="extended-day4.png" alt="Røros">
+            <div>
+                <p class="day-number">Day 4</p>
+                <h4>Lillehammer to Røros</h4>
+                <p>
+                    Enjoy scenic countryside routes
+                    and discover the historic town of Røros.
+                </p>
+            </div>
+        </div>
+
+        <div class="itinerary-day">
+            <img src="extended-day5.png" alt="Harbour">
+            <div>
+                <p class="day-number">Day 5</p>
+                <h4>Røros to Trondheim</h4>
+                <p>
+                    Travel through scenic landscapes
+                    and arrive in Trondheim, a city rich
+                    in history and culture.
+                </p>
+            </div>
+        </div>
+
+        <div class="itinerary-day">
+            <img src="extended-day6.png" alt="Trondheim">
+            <div>
+                <p class="day-number">Day 6</p>
+                <h4>Exploring Trondheim</h4>
+                <p>
+                    Explore Trondheim's historic streets,
+                    colourful buildings and cultural attractions.
+                </p>
+            </div>
+        </div>
+
+        <div class="itinerary-day">
+            <img src="extended-day7.png" alt="Waterfront">
+            <div>
+                <p class="day-number">Day 7</p>
+                <h4>Departure from Trondheim</h4>
+                <p>
+                    Enjoy your final moments in Trondheim
+                    before departing and concluding your
+                    cycling adventure.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <h3 class="subheading">Comfort Package Includes</h3>
+
+    <div class="comfort-list">
+
+        <div class="comfort-item">
+            <span class="comfort-icon">⌂</span>
+            Accommodation in local hotels
+        </div>
+
+        <div class="comfort-item">
+            <span class="comfort-icon">♜</span>
+            Breakfasts and dinners
+        </div>
+
+        <div class="comfort-item">
+            <span class="comfort-icon">♧</span>
+            Experienced Local Guides
+        </div>
+
+        <div class="comfort-item">
+            <span class="comfort-icon">▤</span>
+            Sightseeing and Cultural Stops
+        </div>
+
+        <div class="comfort-item">
+            <span class="comfort-icon">▣</span>
+            Support vehicle
+        </div>
+
+    </div>
+
+    <h3 class="subheading">Important Information</h3>
+
+    <p class="important-info">
+        Duration: 7 days<br>
+        Difficulty: Challenging<br>
+        Starting point: Bergen<br>
+        Ending point: Trondheim<br><br>
+
+        Comfortable cycling clothing, suitable shoes
+        and a waterproof jacket are recommended.
+        Check the weather conditions and prepare for
+        long cycling distances and mountain terrain.
+    </p>
+
+</section>
+
+
+<!-- FIRST TOUR GALLERY -->
+
+<div class="extended-gallery">
+
+    <img src="extended-gallery-1.png"
+         alt="Norwegian fjord"
+         class="extended-gallery-main">
+
+    <div class="extended-gallery-bottom">
+
+        <img src="extended-gallery-2.png"
+             alt="Mountain road">
+
+        <img src="extended-gallery-3.png"
+             alt="Waterfront">
+
+    </div>
+
+</div>
+
+
+<!-- FIRST TOUR PRICES -->
+
+<section class="extended-fee">
+
+    <h2>Participation Fee</h2>
+
+    <div class="extended-fee-grid">
+
+        <div class="extended-fee-card">
+
+            <h3>Explore</h3>
+            <p class="extended-fee-price">1000 EUR</p>
+            <p class="extended-fee-description">
+                Basic package
+            </p>
+
+            <a href="book-call.html?tour=grand-nordic&amp;package=explore"
+               class="extended-book">
+                Book
+            </a>
+
+        </div>
+
+        <div class="extended-fee-card">
+
+            <h3>Comfort</h3>
+            <p class="extended-fee-price">2500 EUR</p>
+            <p class="extended-fee-description">
+                All-inclusive - hotel, meals &amp; transfer.
+            </p>
+
+            <a href="book-call.html?tour=grand-nordic&amp;package=comfort"
+               class="extended-book">
+                Book
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SECOND TOUR -->
+
+<section class="extended-tour" id="majestic-fjords">
+
+    <h2>
+        Majestic Fjords<br>
+        and<br>
+        Mountain<br>
+        Passes<br>
+        Cycling Tour
+    </h2>
+
+    <div class="tour-tags">
+        <span>◷ 10 Days</span>
+        <span>▥ Challenging</span>
+        <span>⌖ Bergen</span>
+    </div>
+
+    <p class="tour-description">
+        Discover Norway's majestic fjords and mountain
+        passes on an unforgettable 10-day cycling
+        adventure from Bergen to Kristiansund.
+        Enjoy breathtaking landscapes, scenic coastal
+        roads, charming villages and spectacular
+        mountain views along the way.
+    </p>
+
+    <h3 class="subheading">Highlights</h3>
+
+    <div class="highlights">
+
+        <div class="highlight">
+            <span class="highlight-icon">≋</span>
+            Scenic Mountain Passes
+        </div>
+
+        <div class="highlight">
+            <span class="highlight-icon">△</span>
+            Majestic Fjords and Mountains
+        </div>
+
+        <div class="highlight">
+            <span class="highlight-icon">≋</span>
+            Coastal Cycling Routes
+        </div>
+
+        <div class="highlight">
+            <span class="highlight-icon">▣</span>
+            Spectacular Viewpoints
+        </div>
+
+    </div>
+
+    <h3 class="subheading">Daily Itinerary — 10 Days</h3>
+
+    <div class="daily-itinerary">
+
+        <div class="itinerary-day">
+            <img src="majestic-day1.png" alt="Bergen">
+            <div>
+                <p class="day-number">Day 1</p>
+                <h4>Arrival in Bergen</h4>
+                <p>
+                    Arrive in Bergen, explore its colourful
+                    waterfront and prepare for your
+                    cycling adventure.
+                </p>
+            </div>
+        </div>
+
+        <div class="itinerary-day">
+            <img src="majestic-day2.png" alt="Hardangerfjord">
+            <div>
+                <p class="day-number">Day 2</p>
+                <h4>Bergen to Hardangerfjord</h4>
+                <p>
+                    Cycle through scenic landscapes
+                    and charming villages, enjoying
+                    beautiful views of the Hardangerfjord.
+                </p>
+            </div>
+        </div>
+
+        <div class="itinerary-day">
+            <img src="majestic-day3.png" alt="Voss">
+            <div>
+                <p class="day-number">Day 3</p>
+                <h4>Hardangerfjord to Voss</h4>
+                <p>
+                    Discover mountain scenery,
+                    peaceful valleys and waterfalls
+                    on your way to Voss.
+                </p>
+            </div>
+        </div>
+
+        <div class="itinerary-day">
+            <img src="majestic-day4.png" alt="Flåm">
+            <div>
+                <p class="day-number">Day 4</p>
+                <h4>Voss to Flåm</h4>
+                <p>
+                    Ride through beautiful valleys
+                    and enjoy spectacular fjord views
+                    before arriving in Flåm.
+                </p>
+            </div>
+        </div>
+
+        <div class="itinerary-day">
+            <img src="majestic-day5.png" alt="Geiranger">
+            <div>
+                <p class="day-number">Day 5</p>
+                <h4>Flåm to Geiranger</h4>
+                <p>
+                    Explore dramatic mountain landscapes
+                    and breathtaking waterfalls on your
+                    journey towards Geiranger.
+                </p>
+            </div>
+        </div>
+
+        <div class="itinerary-day">
+            <img src="majestic-day6.png" alt="Ålesund">
+            <div>
+                <p class="day-number">Day 6</p>
+                <h4>Geiranger to Ålesund</h4>
+                <p>
+                    Enjoy scenic coastal routes
+                    and beautiful fjord landscapes
+                    before reaching Ålesund.
+                </p>
+            </div>
+        </div>
+
+        <div class="itinerary-day">
+            <img src="majestic-day7.png" alt="Ålesund">
+            <div>
+                <p class="day-number">Day 7</p>
+                <h4>Ålesund Rest Day</h4>
+                <p>
+                    Explore Ålesund's charming streets,
+                    colourful architecture and scenic
+                    viewpoints at your own pace.
+                </p>
+            </div>
+        </div>
+
+        <div class="itinerary-day">
+            <img src="majestic-day8.png" alt="Molde">
+            <div>
+                <p class="day-number">Day 8</p>
+                <h4>Ålesund to Molde</h4>
+                <p>
+                    Cycle along coastal roads and enjoy
+                    panoramic views of the surrounding
+                    islands and fjords.
+                </p>
+            </div>
+        </div>
+
+        <div class="itinerary-day">
+            <img src="majestic-day9.png" alt="Kristiansund">
+            <div>
+                <p class="day-number">Day 9</p>
+                <h4>Molde to Kristiansund</h4>
+                <p>
+                    Discover picturesque coastal
+                    landscapes and charming villages
+                    on the way to Kristiansund.
+                </p>
+            </div>
+        </div>
+
+        <div class="itinerary-day">
+            <img src="majestic-day10.png" alt="Kristiansund">
+            <div>
+                <p class="day-number">Day 10</p>
+                <h4>Departure from Kristiansund</h4>
+                <p>
+                    Enjoy your final moments in
+                    Kristiansund before departing
+                    and concluding your Norwegian
+                    cycling adventure.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <h3 class="subheading">Comfort Package Includes</h3>
+
+    <div class="comfort-list">
+
+        <div class="comfort-item">
+            <span class="comfort-icon">⌂</span>
+            Accommodation in local hotels
+        </div>
+
+        <div class="comfort-item">
+            <span class="comfort-icon">♜</span>
+            Breakfasts and dinners
+        </div>
+
+        <div class="comfort-item">
+            <span class="comfort-icon">♧</span>
+            Experienced Local Guides
+        </div>
+
+        <div class="comfort-item">
+            <span class="comfort-icon">♧</span>
+            Bicycle and Cycling Equipment
+        </div>
+
+        <div class="comfort-item">
+            <span class="comfort-icon">▣</span>
+            Support vehicle
+        </div>
+
+    </div>
+
+    <h3 class="subheading">Important Information</h3>
+
+    <p class="important-info">
+        Duration: 10 days<br>
+        Difficulty: Challenging<br>
+        Starting point: Bergen<br>
+        Ending point: Kristiansund<br><br>
+
+        Comfortable cycling clothing, suitable shoes
+        and a waterproof jacket are recommended.
+        Please check the weather conditions and prepare
+        for long cycling distances, mountain passes
+        and changing weather.
+    </p>
+
+</section>
+
+
+<!-- SECOND TOUR GALLERY -->
+
+<div class="extended-gallery">
+
+    <img src="majestic-gallery-1.png"
+         alt="Norwegian fjord"
+         class="extended-gallery-main">
+
+    <div class="extended-gallery-bottom">
+
+        <img src="majestic-gallery-2.png"
+             alt="Mountain road">
+
+        <img src="majestic-gallery-3.png"
+             alt="Coastal islands">
+
+    </div>
+
+</div>
+
+
+<!-- SECOND TOUR PRICES -->
+
+<section class="extended-fee">
+
+    <h2>Participation Fee</h2>
+
+    <div class="extended-fee-grid">
+
+        <div class="extended-fee-card">
+
+            <h3>Explore</h3>
+            <p class="extended-fee-price">1500 EUR</p>
+            <p class="extended-fee-description">
+                Basic package
+            </p>
+
+            <a href="book-call.html?tour=majestic-fjords&amp;package=explore"
+               class="extended-book">
+                Book
+            </a>
+
+        </div>
+
+        <div class="extended-fee-card">
+
+            <h3>Comfort</h3>
+            <p class="extended-fee-price">3200 EUR</p>
+            <p class="extended-fee-description">
+                All-inclusive - hotel, meals &amp; transfer.
+            </p>
+
+            <a href="book-call.html?tour=majestic-fjords&amp;package=comfort"
+               class="extended-book">
+                Book
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT INFORMATION -->
+
+<section class="extended-contact">
+
+    <p>
+        If you have any further questions,
+        feel free to reach out<br>
+        to us via email at
+        <a href="mailto:info@tourdefriends.no">
+            info@tourdefriends.no
+        </a><br>
+        or by phone at
+        <a href="tel:+4712345678">
+            +47 123 456 78
+        </a>.
+    </p>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="extended-footer">
+
+    <div class="extended-footer-left">
+
+        <a href="index.html" class="extended-footer-logo">
+            TDR
+        </a>
+
+        <a href="tel:+4712345678">
+            +47 123 456 78
+        </a>
+
+        <a href="mailto:info@tourdefriends.no">
+            info@tourdefriends.no
+        </a>
+
+        <p>
+            Contact Tour De Friends to learn<br>
+            more about our community and tours.
+        </p>
+
+    </div>
+
+    <div class="extended-footer-right">
+
+        <div class="extended-footer-social">
+
+            <a href="#" aria-label="Instagram">
+
+                <svg viewBox="0 0 24 24"
+                     aria-hidden="true">
+
+                    <rect x="3" y="3"
+                          width="18" height="18"
+                          rx="5"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"/>
+
+                    <circle cx="12" cy="12"
+                            r="4"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"/>
+
+                    <circle cx="17.5" cy="6.5"
+                            r="1.2"
+                            fill="currentColor"/>
+
+                </svg>
+
+            </a>
+
+            <a href="#" aria-label="Facebook">
+
+                <svg viewBox="0 0 24 24"
+                     aria-hidden="true">
+
+                    <path fill="currentColor"
+                          d="M13.5 21v-8h2.7l.4-3.1h-3.1V8
+                          c0-.9.3-1.5 1.6-1.5h1.7V3.7
+                          c-.3 0-1.3-.1-2.5-.1
+                          -2.5 0-4.2 1.5-4.2 4.3v2H7.3V13
+                          h2.8v8z"/>
+
+                </svg>
+
+            </a>
+
+        </div>
+
+        <nav class="extended-footer-links">
+
+            <a href="day-tours.html">
+                Day Tours
+            </a>
+
+            <a href="weekend-getaways.html">
+                Weekend<br>Getaways
+            </a>
+
+            <a href="index.html#equipment">
+                Our Equipment
+            </a>
+
+        </nav>
+
+    </div>
+
+</footer>
+
+</body>
+</html>

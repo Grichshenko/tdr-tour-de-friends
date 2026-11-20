@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Call | TDR</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+        @font-face {
+            font-family: 'Morena';
+            src: url('fonts/Morena-ExtraLight.otf') format('opentype');
+            font-weight: 200;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Morena';
+            src: url('fonts/Morena-Light.otf') format('opentype');
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            min-height: 100svh;
+            background: #1F1F1F;
+            color: #FAFAFA;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .page {
+            width: 100%;
+            max-width: 390px;
+            margin: 0 auto;
+            padding: 70px 28px 40px;
+        }
+
+        .close-row {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 6px;
+        }
+
+        .close-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: #32494B;
+            color: #FAFAFA;
+            text-decoration: none;
+            font-size: 20px;
+            line-height: 1;
+        }
+
+        .form-card {
+            width: 100%;
+            min-height: 360px;
+            padding: 55px 34px 50px;
+            border-radius: 38px;
+            background: #32494B;
+        }
+
+        .form-card h1 {
+            margin: 0 0 30px;
+            font-family: 'Morena', sans-serif;
+            font-size: 27px;
+            font-weight: 200;
+            line-height: 1.25;
+        }
+
+        .form-field {
+            display: block;
+            width: 100%;
+            height: 36px;
+            padding: 7px 4px;
+            margin-bottom: 12px;
+            border: none;
+            border-bottom: 1px solid #B3D2BE;
+            border-radius: 0;
+            outline: none;
+            background: transparent;
+            color: #FAFAFA;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+        }
+
+        .form-field::placeholder {
+            color: #D4E1DB;
+            opacity: 1;
+        }
+
+        .form-field:focus {
+            border-bottom: 2px solid #B3D2BE;
+        }
+
+        .privacy {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            margin: 20px 0 24px;
+            color: #D4E1DB;
+            font-size: 9px;
+            cursor: pointer;
+        }
+
+        .privacy input {
+            width: 11px;
+            height: 11px;
+            margin: 0;
+            accent-color: #B3D2BE;
+            cursor: pointer;
+        }
+
+        .submit-button {
+            display: block;
+            width: 100%;
+            min-height: 48px;
+            border: none;
+            border-radius: 30px;
+            background: #B3D2BE;
+            color: #32494B;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background: #A0C7AB;
+        }
+
+        /* Thank you screen */
+
+        .thank-you-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 300px;
+            padding: 52px 28px 45px;
+            border-radius: 38px;
+            background: #32494B;
+            text-align: center;
+        }
+
+        .thank-you-card h1 {
+            margin: 0;
+            font-family: 'Morena', sans-serif;
+            font-size: 27px;
+            font-weight: 200;
+            line-height: 1.25;
+        }
+
+        .thank-you-card p {
+            max-width: 260px;
+            margin: 65px 0 0;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        [hidden] {
+            display: none !important;
+        }
+
+        @media (max-width: 350px) {
+            .page {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+            .form-card {
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+        }
+
+/* Selected tour information */
+
+#selected-tour-info {
+    margin: -12px 0 22px;
+    padding: 10px 12px;
+    border-radius: 9px;
+    background: rgba(179, 210, 190, 0.12);
+    color: #D4E1DB;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <main class="page">
+
+        <!-- Booking form -->
+
+        <div id="booking-screen">
+
+            <div class="close-row">
+                <a
+                    href="day-tours.html"
+                    class="close-button"
+                    aria-label="Close booking form"
+                >×</a>
+            </div>
+
+            <section class="form-card">
+
+                <h1>Book a call</h1>
+
+<p id="selected-tour-info" hidden></p>
+
+
+                <form id="booking-form">
+
+                    <input
+                        class="form-field"
+                        type="text"
+                        name="name"
+                        placeholder="Your name"
+                        aria-label="Your name"
+                        autocomplete="name"
+                        required
+                    >
+
+                    <input
+                        class="form-field"
+                        type="tel"
+                        name="phone"
+                        placeholder="Your phone"
+                        aria-label="Your phone"
+                        autocomplete="tel"
+                        required
+                    >
+
+                    <label class="privacy">
+                        <input
+                            type="checkbox"
+                            name="privacy"
+                            required
+                        >
+                        I agree to the privacy policy
+                    </label>
+
+                    <button
+                        type="submit"
+                        class="submit-button"
+                    >
+                        Book a call
+                    </button>
+
+                </form>
+
+            </section>
+
+        </div>
+
+        <!-- Thank you screen -->
+
+        <div id="thank-you-screen" hidden>
+
+            <div class="close-row">
+                <a
+                    href="day-tours.html"
+                    class="close-button"
+                    aria-label="Close confirmation"
+                >×</a>
+            </div>
+
+            <section class="thank-you-card">
+
+                <h1>
+                    Thank you for<br>
+                    your application
+                </h1>
+
+                <p>
+                    Our manager will contact you at the phone
+                    number provided as soon as possible.
+                </p>
+
+            </section>
+
+        </div>
+
+    </main>
+
+    <script>
+
+const params = new URLSearchParams(window.location.search);
+
+const selectedTour = params.get('tour');
+const selectedPackage = params.get('package');
+
+const tourNames = {
+    bergen: 'A One-Day Cycling Tour from Bergen',
+    coastal: 'Coastal Charm Cycling Tour'
+};
+
+if (selectedTour && selectedPackage) {
+    console.log('Selected tour:', tourNames[selectedTour]);
+    console.log('Selected package:', selectedPackage);
+}
+
+const selectedTourInfo =
+    document.getElementById('selected-tour-info');
+
+if (tourNames[selectedTour] &&
+    ['explore', 'comfort'].includes(selectedPackage)) {
+
+    const packageName =
+        selectedPackage === 'explore' ? 'Explore' : 'Comfort';
+
+    selectedTourInfo.textContent =
+        tourNames[selectedTour] + ' — ' + packageName;
+
+    selectedTourInfo.hidden = false;
+}
+
+        const bookingForm =
+            document.getElementById('booking-form');
+
+        const bookingScreen =
+            document.getElementById('booking-screen');
+
+        const thankYouScreen =
+            document.getElementById('thank-you-screen');
+
+        bookingForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Demo prototype: no data is sent to a server.
+            bookingScreen.hidden = true;
+            thankYouScreen.hidden = false;
+        });
+    </script>
+
+</body>
+</html>
+

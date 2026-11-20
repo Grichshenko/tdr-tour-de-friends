@@ -1,0 +1,569 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDR | Tour De Friends</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HERO -->
+
+<header class="hero" id="home">
+
+    <nav class="navbar">
+        <button class="menu-button" id="menu-button"
+                aria-label="Open menu">☰</button>
+
+        <a href="#home" class="logo">TDR</a>
+
+        <div class="navbar-right">
+            <span class="header-phone">+47 123 456 78</span>
+
+            <a class="phone" href="tel:+4712345678"
+               aria-label="Call us">
+                <svg viewBox="0 0 24 24"
+                     width="16" height="16"
+                     aria-hidden="true">
+                    <path fill="currentColor"
+                          d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.3 1.1z"/>
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+
+    <nav class="mobile-menu" id="mobile-menu"
+         aria-label="Main navigation">
+
+        <button class="menu-close" id="menu-close"
+                aria-label="Close menu">×</button>
+
+        <a href="#mission">Our Mission</a>
+        <a href="#values">Our Values</a>
+        <a href="#routes">Our Routes</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#equipment">Our Equipment</a>
+        <a href="#pricing">Tour Packages</a>
+    </nav>
+
+    <div class="hero-content">
+        <h1>
+            Ride.<br>
+            Explore.<br>
+            Connect.
+        </h1>
+
+        <p>
+            Tour De Friends is a Norwegian cycling community
+            that welcomes young adults who are passionate
+            about cycling, exploring new destinations,
+            and connecting with like-minded individuals.
+        </p>
+    </div>
+
+    <!-- ANIMATED SCROLL CIRCLE -->
+
+    <a href="#mission"
+       class="scroll-button"
+       aria-label="Scroll to Our Mission">
+
+        <svg class="scroll-ring"
+             viewBox="0 0 120 120"
+             aria-hidden="true">
+
+            <defs>
+                <path
+                    id="scroll-circle-path"
+                    d="M 60,60
+                       m -43,0
+                       a 43,43 0 1,1 86,0
+                       a 43,43 0 1,1 -86,0"
+                />
+            </defs>
+
+            <text>
+                <textPath href="#scroll-circle-path">
+                    Scroll to know more · Scroll to know more ·
+                </textPath>
+            </text>
+        </svg>
+
+        <svg class="scroll-arrow"
+             viewBox="0 0 24 24"
+             fill="none"
+             stroke="currentColor"
+             stroke-width="1.8"
+             stroke-linecap="round"
+             stroke-linejoin="round"
+             aria-hidden="true">
+
+            <path d="M12 3v17M5 13l7 7 7-7"/>
+        </svg>
+    </a>
+
+</header>
+
+<main>
+
+    <!-- OUR MISSION -->
+
+    <section class="mission section" id="mission">
+
+        <h2>Our<br>Mission</h2>
+
+        <p>
+            Tour De Friends aims to create a community of
+            young adults who are passionate about cycling,
+            exploring new destinations, and connecting
+            with like-minded individuals.
+        </p>
+
+        <p>
+            We provide a platform for our members to form
+            meaningful relationships and create unforgettable
+            memories while exploring the world on two wheels.
+        </p>
+
+        <div class="mission-gallery">
+
+            <img src="mission-main.png"
+                 alt="Cyclist in the mountains"
+                 class="mission-main-image">
+
+            <div class="mission-small-images">
+
+                <img src="mission-house.png"
+                     alt="Norwegian house">
+
+                <img src="mission-fjord.png"
+                     alt="Cycling landscape">
+
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR VALUES -->
+
+    <section class="values section" id="values">
+
+        <h2>Our Values</h2>
+
+        <p class="section-description">
+            Tour De Friends values inclusivity, friendship,
+            and adventure. We strive to create a welcoming
+            and inclusive community where everyone feels
+            valued and appreciated.
+        </p>
+
+        <p class="section-description">
+            We believe that cycling is a way to connect
+            with nature, discover new destinations,
+            and challenge oneself both physically
+            and mentally.
+        </p>
+
+        <div class="values-gallery">
+
+            <img src="values-1.png"
+                 alt="Friends standing together at sunset"
+                 class="values-main-image">
+
+            <div class="values-side-images">
+
+                <img src="values-2.png"
+                     alt="Cycling at sunset">
+
+                <img src="values-3.png"
+                     alt="Mountain bike in nature">
+
+            </div>
+        </div>
+    </section>
+
+    <!-- OUR ROUTES -->
+
+    <section class="routes section" id="routes">
+
+        <h2>Our Routes</h2>
+
+        <p class="routes-description">
+            Discover Norway on two wheels.
+            Choose your next cycling adventure.
+        </p>
+
+        <div class="routes-list">
+
+            <button class="route-button"
+                    data-route="bergen">
+                Bergen to Flåm
+            </button>
+
+            <button class="route-button"
+                    data-route="oslo">
+                Oslo to Lillehammer
+            </button>
+
+            <button class="route-button"
+                    data-route="stavanger">
+                Stavanger to Preikestolen
+            </button>
+
+            <button class="route-button"
+                    data-route="trondheim">
+                Trondheim to Ålesund
+            </button>
+
+        </div>
+
+        <!-- ROUTE DETAILS -->
+
+        <div class="route-details"
+             id="route-details"
+             hidden>
+
+            <video id="route-video"
+                   class="route-video"
+                   controls
+                   playsinline
+                   preload="metadata">
+            </video>
+
+            <h3 id="route-title"></h3>
+
+            <p id="route-description"></p>
+
+            <p class="route-price" id="route-price"></p>
+
+            <a href="day-tours.html"
+               class="primary-button">
+                Explore Tours
+            </a>
+
+        </div>
+
+        <!-- ROUTES DESCRIPTION -->
+
+        <div class="routes-info">
+            <p>
+                All of our routes are carefully selected to provide
+                the best possible cycling experience. We ensure
+                that our routes are safe, well-maintained, and offer
+                stunning views of the Norwegian landscape.
+                Our experienced guides will lead you every step
+                of the way, providing support, encouragement,
+                and guidance as needed.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- CONTACT FORM -->
+
+    <section class="contact section" id="contact">
+
+        <h2>Contact Us</h2>
+
+        <p class="section-description">
+            Contact us today to learn more about<br>
+            our routes
+        </p>
+
+        <form id="contact-form">
+
+            <label class="figma-field">
+                <span class="field-dot"></span>
+
+                <input type="text"
+                       name="name"
+                       placeholder="Name"
+                       required>
+            </label>
+
+            <label class="figma-field">
+                <span class="field-dot"></span>
+
+                <input type="text"
+                       name="surname"
+                       placeholder="Surname"
+                       required>
+            </label>
+
+            <label class="figma-field">
+                <span class="field-dot"></span>
+
+                <input type="text"
+                       name="message"
+                       placeholder="Note forms"
+                       required>
+            </label>
+
+            <button type="submit"
+                    class="primary-button">
+                Send
+            </button>
+
+            <p id="contact-message"
+               class="contact-message"
+               aria-live="polite"></p>
+
+        </form>
+
+    </section>
+
+    <!-- OUR EQUIPMENT -->
+
+    
+<section class="equipment section" id="equipment">
+
+    <h2>Our Equipment</h2>
+
+    <p class="section-description">
+        Tour De Friends provides high-quality equipment to
+        ensure that everyone can enjoy the thrill of cycling.
+        We offer a range of bicycles, including road bikes,
+        mountain bikes, and hybrid bikes, to suit different
+        preferences and abilities.
+    </p>
+
+    <p class="section-description equipment-second">
+        Additionally, we provide helmets, locks, and other
+        necessary gear to ensure that everyone is safe and
+        comfortable during their ride.
+    </p>
+
+    
+<div class="equipment-grid">
+
+    <a href="road-bikes.html" class="equipment-item">
+        <img src="icons/road-bike.svg" alt="Road bikes">
+        <span>Road bikes</span>
+    </a>
+
+    <a href="mountain-bikes.html" class="equipment-item">
+        <img src="icons/mountain-bike.svg" alt="Mountain bikes">
+        <span>Mountain bikes</span>
+    </a>
+
+    <a href="helmets.html" class="equipment-item">
+        <img src="icons/helmet.svg" alt="Helmets">
+        <span>Helmets</span>
+    </a>
+
+    <a href="locks.html" class="equipment-item">
+        <img src="icons/lock.svg" alt="Locks">
+        <span>Locks</span>
+    </a>
+
+    <a href="hybrid-bikes.html" class="equipment-item">
+        <img src="icons/hybrid-bike.svg" alt="Hybrid bikes">
+        <span>Hybrid bikes</span>
+    </a>
+
+    <a href="other-gear.html" class="equipment-item">
+        <img src="icons/other-gear.svg" alt="Other gear">
+        <span>Other gear</span>
+    </a>
+
+</div>
+
+
+</section>
+
+
+    <!-- JOIN THE COMMUNITY -->
+
+    <section class="community">
+
+    
+<div class="community-content">
+
+    
+
+<p>
+    Join Tour De Friends and discover new destinations
+    with like-minded individuals. We offer day trips,
+    weekend getaways, and extended tours to accommodate
+    various budgets.
+</p>
+
+
+
+    <a href="#contact" class="community-button">
+        Join the community
+    </a>
+
+</div>
+
+<img src="community.png"
+     alt="Norwegian landscape"
+     class="community-image">
+
+    </section>
+
+    <!-- TOUR PACKAGES AND PRICING -->
+
+    <section class="pricing section" id="pricing">
+
+        <h2>
+            Tour Packages<br>
+            and<br>
+            Pricing
+        </h2>
+
+        <div class="pricing-slider">
+
+            <a href="day-tours.html"
+               class="pricing-slide">
+
+                <img src="pricing-day.png"
+                     alt="Day Tours">
+
+                <span class="pricing-slide-title">
+                    Day Tours
+                </span>
+            </a>
+
+            <a href="weekend-getaways.html"
+               class="pricing-slide">
+
+                <img src="pricing-weekend.png"
+                     alt="Weekend Getaways">
+
+                <span class="pricing-slide-title">
+                    Weekend Getaways
+                </span>
+            </a>
+
+            <a href="extended-tours.html"
+               class="pricing-slide">
+
+                <img src="pricing-extended.png"
+                     alt="Extended Tours">
+
+                <span class="pricing-slide-title">
+                    Extended Tours
+                </span>
+            </a>
+
+        </div>
+<p class="pricing-note">
+    All of our tours include experienced guides,
+    high-quality bicycles, helmets, and water bottles.
+    We also offer optional add-ons, such as accommodation,
+    meals, and transportation.
+</p>
+
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-top">
+
+        <a href="#home" class="footer-logo">TDR</a>
+
+        <div class="footer-social">
+
+            <a href="#" aria-label="Instagram">
+                <svg viewBox="0 0 24 24"
+                     width="17" height="17"
+                     aria-hidden="true">
+
+                    <rect x="3" y="3"
+                          width="18" height="18"
+                          rx="5"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"/>
+
+                    <circle cx="12" cy="12"
+                            r="4"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"/>
+
+                    <circle cx="17.5" cy="6.5"
+                            r="1.2"
+                            fill="currentColor"/>
+                </svg>
+            </a>
+
+            <a href="#" aria-label="Facebook">
+                <svg viewBox="0 0 24 24"
+                     width="17" height="17"
+                     aria-hidden="true">
+
+                    <path fill="currentColor"
+                          d="M13.5 21v-8h2.7l.4-3.1h-3.1V8
+                             c0-.9.3-1.5 1.6-1.5h1.7V3.7
+                             c-.3 0-1.3-.1-2.5-.1
+                             -2.5 0-4.2 1.5-4.2 4.3v2H7.3V13
+                             h2.8v8z"/>
+                </svg>
+            </a>
+
+        </div>
+    </div>
+
+    <div class="footer-content">
+
+        <div class="footer-contact">
+
+            <a href="tel:+4712345678">
+                +47 123 456 78
+            </a>
+
+            <a href="mailto:info@tourdefriends.no">
+                info@tourdefriends.no
+            </a>
+
+            <p>
+                Contact Tour De Friends to learn more
+                about our community and tours.
+            </p>
+
+        </div>
+
+        <nav class="footer-links">
+
+            <a href="day-tours.html">
+                Day Tours
+            </a>
+
+            <a href="extended-tours.html">
+                Extended Tours
+            </a>
+
+            <a href="weekend-getaways.html">
+                Weekend Getaways
+            </a>
+
+            <a href="#equipment">
+                Our Equipment
+            </a>
+
+            <a href="#contact">
+                Contact Us
+            </a>
+
+        </nav>
+
+    </div>
+
+    <p class="footer-copyright">
+        © Tour De Friends
+    </p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

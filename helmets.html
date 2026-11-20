@@ -1,0 +1,1173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Helmets | TDR</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+@font-face {
+    font-family: 'Morena';
+    src: url('fonts/Morena-Light.otf') format('opentype');
+    font-weight: 300;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    margin: 0;
+    background: #FAFAFA;
+    color: #1A1A1A;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a { text-decoration: none; }
+button { font-family: inherit; }
+
+/* HERO */
+
+.helmets-hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    background:
+        linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.3)),
+        url('helmets-hero.png') center/cover no-repeat;
+    color: white;
+}
+
+.helmets-header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 8px;
+    padding: 22px 15px;
+}
+
+.menu-button {
+    justify-self: start;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.menu-button span {
+    width: 18px;
+    height: 2px;
+    background: white;
+}
+
+.header-logo {
+    font-family: 'Morena', sans-serif;
+    font-size: 22px;
+    color: white;
+}
+
+.header-right {
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-phone {
+    font-size: 9px;
+    color: white;
+    white-space: nowrap;
+}
+
+.header-call {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #69AD80;
+    color: white;
+}
+
+.header-call svg {
+    width: 14px;
+    height: 14px;
+}
+
+.hero-title {
+    position: absolute;
+    top: 49%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    margin: 0;
+    padding: 0 15px;
+    font-size: 31px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* PRODUCTS */
+
+.helmets-products {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 45px 20px 20px;
+}
+
+.helmets-products h2 {
+    margin: 0 0 38px;
+    font-size: 27px;
+    text-align: center;
+}
+
+.helmet-card {
+    position: relative;
+    margin-bottom: 42px;
+}
+
+.helmet-image-box {
+    height: 220px;
+    overflow: hidden;
+    border: 1px solid #D8E6DD;
+    border-radius: 16px;
+    background: white;
+}
+
+.helmet-image-box img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    object-fit: contain;
+}
+
+.helmet-details {
+    position: relative;
+    margin-top: -15px;
+    min-height: 93px;
+    padding: 14px 12px;
+    border-radius: 15px;
+    background: #32494B;
+    color: white;
+    text-align: center;
+}
+
+.helmet-details h3 {
+    margin: 0 0 9px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.helmet-prices {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 9px;
+    color: #B3D2BE;
+    font-size: 9px;
+}
+
+.helmet-specs {
+    margin: 0;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.add-cart {
+    position: absolute;
+    z-index: 3;
+    top: -18px;
+    right: -12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    padding: 10px;
+    border: 0;
+    border-radius: 50%;
+    background: #63A587;
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* CONTACT */
+
+.helmets-contact {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px 25px 65px;
+    text-align: center;
+}
+
+.helmets-contact p {
+    margin: 0 0 30px;
+    font-size: 11px;
+    line-height: 1.9;
+}
+
+.contact-button {
+    display: block;
+    width: 90%;
+    margin: auto;
+    padding: 18px;
+    border-radius: 40px;
+    background: #B3D2BE;
+    color: #32494B;
+    font-size: 13px;
+}
+
+/* FOOTER */
+
+.helmets-footer {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    gap: 20px;
+    padding: 40px 20px 55px;
+    background: #32494B;
+    color: white;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.footer-logo {
+    font-family: 'Morena', sans-serif;
+    font-size: 34px;
+    color: white;
+}
+
+.footer-left > a:not(.footer-logo) {
+    color: white;
+    font-size: 10px;
+}
+
+.footer-left p {
+    margin: 15px 0 0;
+    color: white;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 12px;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: white;
+    color: #69AD80;
+    font-size: 14px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: white;
+    font-size: 10px;
+}
+
+/* CART */
+
+.cart-floating {
+    position: fixed;
+    z-index: 50;
+    top: 15px;
+    right: 15px;
+    padding: 10px 15px;
+    border: 0;
+    border-radius: 30px;
+    background: #32494B;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.cart-overlay[hidden] { display: none; }
+
+.cart-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: flex-end;
+    background: rgba(0,0,0,.55);
+}
+
+.cart-panel {
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 25px 20px 35px;
+    border-radius: 25px 25px 0 0;
+    background: #FAFAFA;
+}
+
+.cart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.cart-header h2 {
+    margin: 0;
+    font-family: 'Morena', sans-serif;
+    font-size: 28px;
+    font-weight: 300;
+}
+
+.cart-header button {
+    border: 0;
+    background: transparent;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 75px 1fr auto;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 0;
+    border-bottom: 1px solid #D8E6DD;
+}
+
+.cart-item img {
+    width: 75px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.cart-item-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.cart-item-info strong {
+    font-size: 12px;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.quantity-controls button {
+    width: 28px;
+    height: 28px;
+    border: 1px solid #B3D2BE;
+    border-radius: 50%;
+    background: #E9F1EC;
+    color: #32494B;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.quantity-controls span {
+    min-width: 15px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.cart-remove {
+    border: 0;
+    background: transparent;
+    color: #32494B;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.cart-checkout,
+.cart-continue {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    border: 0;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.cart-checkout {
+    background: #69AD80;
+    color: white;
+}
+
+.cart-continue {
+    margin-top: 12px;
+    background: #B3D2BE;
+    color: #32494B;
+}
+
+/* CYCLING CAP INCLUDED */
+
+.helmet-image-box {
+    position: relative;
+    padding-right: 65px;
+}
+
+
+
+
+
+
+/* FINAL CYCLING CAP FIX */
+
+.helmet-card {
+    position: relative;
+}
+
+.helmet-image-box {
+    position: relative;
+    padding-right: 0;
+}
+
+
+
+
+
+
+.helmet-details {
+    position: relative;
+    z-index: 1;
+}
+
+/* HELMET IMAGE AND CYCLING CAP */
+
+.helmet-image-box {
+    position: relative;
+    height: 220px;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #D8E6DD;
+    border-radius: 16px;
+    background: white;
+}
+
+.helmet-image-box > img {
+    display: block;
+    width: calc(100% - 85px);
+    height: 100%;
+    padding: 12px 0 12px 8px;
+    object-fit: contain;
+}
+
+.helmet-cap {
+    position: absolute;
+    top: 75px;
+    right: 8px;
+    width: 75px;
+    text-align: center;
+    color: #32494B;
+}
+
+.helmet-cap-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 4px;
+    border-radius: 50%;
+    background: #DDF9EB;
+}
+
+.helmet-cap-circle img {
+    display: block;
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.helmet-cap span {
+    display: block;
+    font-size: 10px;
+    line-height: 1.25;
+    font-weight: 500;
+}
+
+.helmet-details {
+    position: relative;
+    z-index: 1;
+    margin-top: -10px;
+}
+
+/* SAME IMAGE SIZE FOR ALL HELMETS */
+
+.helmet-image-box {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.helmet-image-box > img {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+
+    width: calc(100% - 100px);
+    height: 175px;
+
+    padding: 0;
+    object-fit: contain;
+    object-position: center;
+}
+
+.helmet-cap {
+    position: absolute;
+    top: 75px;
+    right: 8px;
+    width: 75px;
+}
+
+.helmet-details {
+    position: relative;
+    z-index: 1;
+    margin-top: -10px;
+}
+
+/* HELMETS 8 AND 9 - SMALLER IMAGES */
+
+.helmet-card:nth-child(8) .helmet-image-box > img,
+.helmet-card:nth-child(9) .helmet-image-box > img {
+    transform: scale(0.8);
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="helmets-hero">
+
+    <header class="helmets-header">
+
+        <button class="menu-button" type="button" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <a href="index.html" class="header-logo">TDR</a>
+
+        <div class="header-right">
+            <span class="header-phone">+47 123 456 78</span>
+            <a href="tel:+4712345678" class="header-call" aria-label="Call">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor" d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.4 0 .8-.3 1.1z"/>
+                </svg>
+            </a>
+        </div>
+
+    </header>
+
+    <h1 class="hero-title">Helmets</h1>
+
+</section>
+
+<section class="helmets-products">
+
+    <h2>Helmets</h2>
+
+    <!-- HELMET 1 -->
+    <div class="helmet-card">
+     
+
+<div class="helmet-image-box">
+
+    <img src="helmet-1.png" alt="Abus Gamechanger 2.0 Helmet">
+
+    <div class="helmet-cap">
+        <div class="helmet-cap-circle">
+            <img src="cycling-cap.png" alt="Cycling cap">
+        </div>
+        <span>Includes<br>cycling cap</span>
+    </div>
+
+</div>
+
+
+
+
+        <div class="helmet-details">
+            <h3>Abus Gamechanger 2.0 Helmet</h3>
+            <div class="helmet-prices">
+                <span>Buy: 245 EUR</span>
+                <span>Rent: 10 EUR / day</span>
+            </div>
+            <p class="helmet-specs">Color: White, Black<br>Material: see details</p>
+        </div>
+        <button class="add-cart" type="button">Add to cart</button>
+    </div>
+
+    
+<!-- HELMET 2 -->
+
+<div class="helmet-card">
+
+    <div class="helmet-image-box">
+
+        <img src="helmet-2.png"
+             alt="Abus Canyon Stormchaser Helmet">
+
+        <div class="helmet-cap">
+
+            <div class="helmet-cap-circle">
+                <img src="cycling-cap.png"
+                     alt="Cycling cap">
+            </div>
+
+            <span>Includes<br>cycling cap</span>
+
+        </div>
+
+    </div>
+
+    <div class="helmet-details">
+
+        <h3>Abus Canyon Stormchaser Helmet</h3>
+
+        <div class="helmet-prices">
+            <span>Buy: 148 EUR</span>
+            <span>Rent: 10 EUR / day</span>
+        </div>
+
+        <p class="helmet-specs">
+            Color: White, Black, Green<br>
+            Material: see details
+        </p>
+
+    </div>
+
+    <button class="add-cart" type="button">
+        Add to cart
+    </button>
+
+</div>
+
+   
+<!-- HELMET 3 -->
+
+<div class="helmet-card">
+
+    <div class="helmet-image-box">
+
+        <img src="helmet-3.png"
+             alt="Abus Canyon Powerdome Helmet">
+
+        <div class="helmet-cap">
+            <div class="helmet-cap-circle">
+                <img src="cycling-cap.png" alt="Cycling cap">
+            </div>
+            <span>Includes<br>cycling cap</span>
+        </div>
+
+    </div>
+
+    <div class="helmet-details">
+
+        <h3>Abus Canyon Powerdome Helmet</h3>
+
+        <div class="helmet-prices">
+            <span>Buy: 120 EUR</span>
+            <span>Rent: 10 EUR / day</span>
+        </div>
+
+        <p class="helmet-specs">
+            Color: Black, Red<br>
+            Material: see details
+        </p>
+
+    </div>
+
+    <button class="add-cart" type="button">
+        Add to cart
+    </button>
+
+</div>
+
+
+<!-- HELMET 4 -->
+
+<div class="helmet-card">
+
+    <div class="helmet-image-box">
+
+        <img src="helmet-4.png"
+             alt="Abus Canyon TT Helmet">
+
+        <div class="helmet-cap">
+            <div class="helmet-cap-circle">
+                <img src="cycling-cap.png" alt="Cycling cap">
+            </div>
+            <span>Includes<br>cycling cap</span>
+        </div>
+
+    </div>
+
+    <div class="helmet-details">
+
+        <h3>Abus Canyon TT Helmet</h3>
+
+        <div class="helmet-prices">
+            <span>Buy:  395 EUR</span>
+            <span>Rent: 10 EUR / day</span>
+        </div>
+
+        <p class="helmet-specs">
+            Color: White, Black, Green<br>
+            Material: see details
+        </p>
+
+    </div>
+
+    <button class="add-cart" type="button">
+        Add to cart
+    </button>
+
+</div>
+
+
+<!-- HELMET 5 -->
+
+<div class="helmet-card">
+
+    <div class="helmet-image-box">
+
+        <img src="helmet-5.png"
+             alt="Abus YouDrop Youth Fullface Helmet">
+
+        <div class="helmet-cap">
+            <div class="helmet-cap-circle">
+                <img src="cycling-cap.png" alt="Cycling cap">
+            </div>
+            <span>Includes<br>cycling cap</span>
+        </div>
+
+    </div>
+
+    <div class="helmet-details">
+
+        <h3>Abus YouDrop Youth Fullface Helmet</h3>
+
+        <div class="helmet-prices">
+            <span>Buy:  108 EUR</span>
+            <span>Rent: 10 EUR / day</span>
+        </div>
+
+        <p class="helmet-specs">
+            Color: White, Black<br>
+            Material: see details
+        </p>
+
+    </div>
+
+    <button class="add-cart" type="button">
+        Add to cart
+    </button>
+
+</div>
+
+
+<!-- HELMET 6 -->
+
+<div class="helmet-card">
+
+    <div class="helmet-image-box">
+
+        <img src="helmet-6.png"
+             alt="Giro Tremor Child Cycling Helmet">
+
+        <div class="helmet-cap">
+            <div class="helmet-cap-circle">
+                <img src="cycling-cap.png" alt="Cycling cap">
+            </div>
+            <span>Includes<br>cycling cap</span>
+        </div>
+
+    </div>
+
+    <div class="helmet-details">
+
+        <h3>Giro Tremor Child Cycling Helmet</h3>
+
+        <div class="helmet-prices">
+            <span>Buy: 68 EUR</span>
+            <span>Rent: 5 EUR / day</span>
+        </div>
+
+        <p class="helmet-specs">
+            Color: White, Black<br>
+            Material: see details
+        </p>
+
+    </div>
+
+    <button class="add-cart" type="button">
+        Add to cart
+    </button>
+
+</div>
+
+
+<!-- HELMET 7 -->
+
+<div class="helmet-card">
+
+    <div class="helmet-image-box">
+
+        <img src="helmet-7.png"
+             alt="Abus Gamechanger Tri Helmet">
+
+        <div class="helmet-cap">
+            <div class="helmet-cap-circle">
+                <img src="cycling-cap.png" alt="Cycling cap">
+            </div>
+            <span>Includes<br>cycling cap</span>
+        </div>
+
+    </div>
+
+    <div class="helmet-details">
+
+        <h3>Abus Gamechanger Tri Helmet</h3>
+
+        <div class="helmet-prices">
+            <span>Buy: 295 EUR</span>
+            <span>Rent: 10 EUR / day</span>
+        </div>
+
+        <p class="helmet-specs">
+            Color: White, Black<br>
+            Material: see details
+        </p>
+
+    </div>
+
+    <button class="add-cart" type="button">
+        Add to cart
+    </button>
+
+</div>
+
+
+<!-- HELMET 8 -->
+
+<div class="helmet-card">
+
+    <div class="helmet-image-box">
+
+        <img src="helmet-8.png"
+             alt="Abus Airbreaker Road Helmet">
+
+        <div class="helmet-cap">
+            <div class="helmet-cap-circle">
+                <img src="cycling-cap.png" alt="Cycling cap">
+            </div>
+            <span>Includes<br>cycling cap</span>
+        </div>
+
+    </div>
+
+    <div class="helmet-details">
+
+        <h3>Abus Airbreaker Road Helmet</h3>
+
+        <div class="helmet-prices">
+            <span>Buy:  240 EUR</span>
+            <span>Rent: 10 EUR / day</span>
+        </div>
+
+        <p class="helmet-specs">
+            Color: White, Black, Grey<br>
+            Material: see details
+        </p>
+
+    </div>
+
+    <button class="add-cart" type="button">
+        Add to cart
+    </button>
+
+</div>
+
+
+<!-- HELMET 9 -->
+
+<div class="helmet-card">
+
+    <div class="helmet-image-box">
+
+        <img src="helmet-9.png"
+             alt="Abus Canyon Road Helmet">
+
+        <div class="helmet-cap">
+            <div class="helmet-cap-circle">
+                <img src="cycling-cap.png" alt="Cycling cap">
+            </div>
+            <span>Includes<br>cycling cap</span>
+        </div>
+
+    </div>
+
+    <div class="helmet-details">
+
+        <h3>Abus Canyon Road Helmet</h3>
+
+        <div class="helmet-prices">
+            <span>Buy: 200 EUR</span>
+            <span>Rent: 10 EUR / day</span>
+        </div>
+
+        <p class="helmet-specs">
+            Color: White, Black, Grey<br>
+            Material: see details
+        </p>
+
+    </div>
+
+    <button class="add-cart" type="button">
+        Add to cart
+    </button>
+
+</div>
+
+
+
+</section>
+
+<section class="helmets-contact">
+    <p>
+        Each of these looks you can buy or rent while traveling
+        in Norway. If you have any additional questions,
+        please write to us.
+    </p>
+    <a href="book-call.html" class="contact-button">Contact us</a>
+</section>
+
+<footer class="helmets-footer">
+
+    <div class="footer-left">
+        <a href="index.html" class="footer-logo">TDR</a>
+        <a href="tel:+4712345678">+47 123 456 78</a>
+        <a href="mailto:info@tourdefriends.no">info@tourdefriends.no</a>
+        <p>Contact Tour De Friends to learn<br>more about our community and tours.</p>
+    </div>
+
+    <div class="footer-right">
+        <div class="footer-social">
+            <a href="#" aria-label="Instagram">◎</a>
+            <a href="#" aria-label="Facebook">f</a>
+        </div>
+
+        <nav class="footer-links">
+            <a href="road-bikes.html">Road bikes</a>
+            <a href="mountain-bikes.html">Mountain bikes</a>
+            <a href="locks.html">Locks</a>
+            <a href="hybrid-bikes.html">Hybrid bikes</a>
+            <a href="other-gear.html">Other gear</a>
+            <a href="index.html#pricing">Tour Packages</a>
+        </nav>
+    </div>
+
+</footer>
+
+<!-- CART BUTTON -->
+
+<button class="cart-floating" type="button" onclick="openCart()">
+    🛒 <span id="cart-count">0</span>
+</button>
+
+<!-- CART WINDOW -->
+
+<div id="cart-overlay" class="cart-overlay" hidden>
+    <div class="cart-panel">
+        <div class="cart-header">
+            <h2>Your cart</h2>
+            <button type="button" onclick="closeCart()" aria-label="Close cart">×</button>
+        </div>
+
+        <div id="cart-items"></div>
+
+        <a href="checkout.html" class="cart-checkout">Request order</a>
+
+        <button class="cart-continue" type="button" onclick="closeCart()">
+            Continue shopping
+        </button>
+    </div>
+</div>
+
+<script>
+const CART_KEY = 'tdr-cart';
+
+function getCart() {
+    try {
+        const data = JSON.parse(localStorage.getItem(CART_KEY));
+        return Array.isArray(data) ? data : [];
+    } catch {
+        return [];
+    }
+}
+
+function saveCart(cart) {
+    localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    updateCartCount();
+    renderCart();
+}
+
+function addToCart(name, image) {
+    const cart = getCart();
+    const existing = cart.find(item => item.name === name);
+
+    if (existing) {
+        existing.quantity += 1;
+    } else {
+        cart.push({ name, image, quantity: 1 });
+    }
+
+    saveCart(cart);
+    openCart();
+}
+
+function removeFromCart(name) {
+    saveCart(getCart().filter(item => item.name !== name));
+}
+
+function changeQuantity(name, change) {
+    const cart = getCart();
+    const item = cart.find(product => product.name === name);
+
+    if (!item) return;
+
+    item.quantity += change;
+
+    if (item.quantity <= 0) {
+        saveCart(cart.filter(product => product.name !== name));
+    } else {
+        saveCart(cart);
+    }
+}
+
+function updateCartCount() {
+    const count = getCart().reduce(
+        (total, item) => total + item.quantity, 0
+    );
+
+    document.getElementById('cart-count').textContent = count;
+}
+
+function openCart() {
+    document.getElementById('cart-overlay').hidden = false;
+    renderCart();
+}
+
+function closeCart() {
+    document.getElementById('cart-overlay').hidden = true;
+}
+
+function renderCart() {
+    const container = document.getElementById('cart-items');
+    const cart = getCart();
+
+    container.innerHTML = '';
+
+    if (cart.length === 0) {
+        container.innerHTML = '<p>Your cart is empty.</p>';
+        return;
+    }
+
+    cart.forEach(item => {
+        const row = document.createElement('div');
+        row.className = 'cart-item';
+
+        const img = document.createElement('img');
+        img.src = item.image;
+        img.alt = item.name;
+
+        const info = document.createElement('div');
+        info.className = 'cart-item-info';
+
+        const name = document.createElement('strong');
+        name.textContent = item.name;
+
+        const controls = document.createElement('div');
+        controls.className = 'quantity-controls';
+
+        const minus = document.createElement('button');
+        minus.type = 'button';
+        minus.textContent = '−';
+        minus.setAttribute('aria-label', 'Decrease quantity');
+        minus.onclick = () => changeQuantity(item.name, -1);
+
+        const quantity = document.createElement('span');
+        quantity.textContent = item.quantity;
+
+        const plus = document.createElement('button');
+        plus.type = 'button';
+        plus.textContent = '+';
+        plus.setAttribute('aria-label', 'Increase quantity');
+        plus.onclick = () => changeQuantity(item.name, 1);
+
+        controls.append(minus, quantity, plus);
+        info.append(name, controls);
+
+        const remove = document.createElement('button');
+        remove.type = 'button';
+        remove.className = 'cart-remove';
+        remove.textContent = 'Remove';
+        remove.onclick = () => removeFromCart(item.name);
+
+        row.append(img, info, remove);
+        container.appendChild(row);
+    });
+}
+
+document.querySelectorAll('.helmet-card').forEach(card => {
+    const button = card.querySelector('.add-cart');
+    const image = card.querySelector('.helmet-image-box img');
+    const name = card.querySelector('.helmet-details h3');
+
+    button.addEventListener('click', () => {
+        addToCart(name.textContent.trim(), image.getAttribute('src'));
+    });
+});
+
+updateCartCount();
+</script>
+
+</body>
+</html>
